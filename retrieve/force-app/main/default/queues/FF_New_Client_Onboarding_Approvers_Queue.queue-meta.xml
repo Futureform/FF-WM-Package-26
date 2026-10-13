@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Records submitted for approval with the Client Onboarding record type are automatically routed here as part of the approval process.</description>
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>New Client Onboarding Approvers Queue</name>
+    <queueMembers>
+        <users>
+            <user>ana.crasi@futureform.uk.wmcompli</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>FF_Application__c</sobjectType>
+    </queueSobject>
+</Queue>

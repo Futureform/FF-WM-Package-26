@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows custom permissions for Agentforce Agent : FF_FactFind_Agent&apos;s agent user : ff_factfind_agent@00dqh00000lb3mf1808297436.ext.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>FF_FactFind_Agent1195489798 Permissions</label>
+    <license>Einstein Agent</license>
+</PermissionSet>

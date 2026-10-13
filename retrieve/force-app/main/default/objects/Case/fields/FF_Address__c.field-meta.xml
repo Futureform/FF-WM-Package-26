@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Address__c</fullName>
+    <description>The field captures the new address provided by the client in the &apos;Update Address&apos; Process.</description>
+    <label>Address</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Address</type>
+</CustomField>

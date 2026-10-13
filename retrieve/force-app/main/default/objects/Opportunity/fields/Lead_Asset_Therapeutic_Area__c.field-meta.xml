@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Asset_Therapeutic_Area__c</fullName>
+    <label>Lead Asset Therapeutic Area</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Anti-Infectives</fullName>
+                <default>false</default>
+                <label>Anti-Infectives</label>
+            </value>
+            <value>
+                <fullName>Autoimmune</fullName>
+                <default>false</default>
+                <label>Autoimmune</label>
+            </value>
+            <value>
+                <fullName>Autoimmune/inflammation</fullName>
+                <default>false</default>
+                <label>Autoimmune/inflammation</label>
+            </value>
+            <value>
+                <fullName>Bleeding disorders</fullName>
+                <default>false</default>
+                <label>Bleeding disorders</label>
+            </value>
+            <value>
+                <fullName>Cardiometabolic</fullName>
+                <default>false</default>
+                <label>Cardiometabolic</label>
+            </value>
+            <value>
+                <fullName>Cardiovascular</fullName>
+                <default>false</default>
+                <label>Cardiovascular</label>
+            </value>
+            <value>
+                <fullName>Cosmetic</fullName>
+                <default>false</default>
+                <label>Cosmetic</label>
+            </value>
+            <value>
+                <fullName>Critical Care</fullName>
+                <default>false</default>
+                <label>Critical Care</label>
+            </value>
+            <value>
+                <fullName>Dentistry</fullName>
+                <default>false</default>
+                <label>Dentistry</label>
+            </value>
+            <value>
+                <fullName>Dermatology</fullName>
+                <default>false</default>
+                <label>Dermatology</label>
+            </value>
+            <value>
+                <fullName>Endocrine</fullName>
+                <default>false</default>
+                <label>Endocrine</label>
+            </value>
+            <value>
+                <fullName>Gastrointestinal</fullName>
+                <default>false</default>
+                <label>Gastrointestinal</label>
+            </value>
+            <value>
+                <fullName>Genetic Diseases</fullName>
+                <default>false</default>
+                <label>Genetic Diseases</label>
+            </value>
+            <value>
+                <fullName>Hepatic diseases</fullName>
+                <default>false</default>
+                <label>Hepatic diseases</label>
+            </value>
+            <value>
+                <fullName>Immunology</fullName>
+                <default>false</default>
+                <label>Immunology</label>
+            </value>
+            <value>
+                <fullName>Inflammation</fullName>
+                <default>false</default>
+                <label>Inflammation</label>
+            </value>
+            <value>
+                <fullName>Infectious disease</fullName>
+                <default>false</default>
+                <label>Infectious disease</label>
+            </value>
+            <value>
+                <fullName>Kidney diseases</fullName>
+                <default>false</default>
+                <label>Kidney diseases</label>
+            </value>
+            <value>
+                <fullName>Medicinal Cannabis</fullName>
+                <default>false</default>
+                <label>Medicinal Cannabis</label>
+            </value>
+            <value>
+                <fullName>Metabolic</fullName>
+                <default>false</default>
+                <label>Metabolic</label>
+            </value>
+            <value>
+                <fullName>Musculoskeletal</fullName>
+                <default>false</default>
+                <label>Musculoskeletal</label>
+            </value>
+            <value>
+                <fullName>Neuroscience</fullName>
+                <default>false</default>
+                <label>Neuroscience</label>
+            </value>
+            <value>
+                <fullName>Oncology</fullName>
+                <default>false</default>
+                <label>Oncology</label>
+            </value>
+            <value>
+                <fullName>Ophthalmology</fullName>
+                <default>false</default>
+                <label>Ophthalmology</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Otology</fullName>
+                <default>false</default>
+                <label>Otology</label>
+            </value>
+            <value>
+                <fullName>Pain</fullName>
+                <default>false</default>
+                <label>Pain</label>
+            </value>
+            <value>
+                <fullName>Pediatrics</fullName>
+                <default>false</default>
+                <label>Pediatrics</label>
+            </value>
+            <value>
+                <fullName>Renal</fullName>
+                <default>false</default>
+                <label>Renal</label>
+            </value>
+            <value>
+                <fullName>Reproductive Health</fullName>
+                <default>false</default>
+                <label>Reproductive Health</label>
+            </value>
+            <value>
+                <fullName>Respiratory</fullName>
+                <default>false</default>
+                <label>Respiratory</label>
+            </value>
+            <value>
+                <fullName>Urology</fullName>
+                <default>false</default>
+                <label>Urology</label>
+            </value>
+            <value>
+                <fullName>Various</fullName>
+                <default>false</default>
+                <label>Various</label>
+            </value>
+            <value>
+                <fullName>Women&apos;s Health</fullName>
+                <default>false</default>
+                <label>Women&apos;s Health</label>
+            </value>
+            <value>
+                <fullName>Wound Healing</fullName>
+                <default>false</default>
+                <label>Wound Healing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

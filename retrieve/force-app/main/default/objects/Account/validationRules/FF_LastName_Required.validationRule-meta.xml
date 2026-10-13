@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_LastName_Required</fullName>
+    <active>false</active>
+    <description>Prevents last name from being left blank</description>
+    <errorConditionFormula>ISBLANK(LastName)</errorConditionFormula>
+    <errorMessage>Last Name must be populated.</errorMessage>
+</ValidationRule>

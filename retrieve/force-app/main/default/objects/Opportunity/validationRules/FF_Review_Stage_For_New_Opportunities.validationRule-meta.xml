@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Review_Stage_For_New_Opportunities</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(StageName, &quot;Closed Won&quot;) = FALSE, 
+    ISPICKVAL(StageName, &quot;Closed Lost&quot;) = FALSE, 
+    NOT(ISPICKVAL(StageName, &quot;Review&quot;)),
+    ISNEW()
+)</errorConditionFormula>
+    <errorMessage>For new Opportunities please select Review as the Stage.</errorMessage>
+</ValidationRule>

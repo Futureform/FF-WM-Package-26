@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is used to identify and categorize client financial goals from meeting discussions for planning purposes.</description>
+    <developerName>p_16jQH000000Jh2r_Financial_Goals_Identification</developerName>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the query involves identifying financial goals from a transcript, categorize the goals based on the context provided.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <localDeveloperName>p_16jQH000000Jh2r_Financial_Goals_Identification</localDeveloperName>
+    <masterLabel>Financial Goals Identification</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only extract and categorize financial goals discussed during client meetings. You aren&apos;t responsible for analyzing or implementing these goals.</scope>
+</GenAiPlugin>

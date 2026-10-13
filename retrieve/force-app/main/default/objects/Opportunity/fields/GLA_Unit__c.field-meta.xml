@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GLA_Unit__c</fullName>
+    <description>Unit of measurement used for Gross Lettable Area (e.g., sq. ft, sq. m).</description>
+    <label>GLA Unit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>sqm</fullName>
+                <default>false</default>
+                <label>sqm</label>
+            </value>
+            <value>
+                <fullName>sqft</fullName>
+                <default>false</default>
+                <label>sqft</label>
+            </value>
+            <value>
+                <fullName>units</fullName>
+                <default>false</default>
+                <label>units</label>
+            </value>
+            <value>
+                <fullName>beds</fullName>
+                <default>false</default>
+                <label>beds</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Mortgage</fullName>
+    <active>true</active>
+    <businessProcess>FF Mortgage Process</businessProcess>
+    <compactLayoutAssignment>FF_Opportunity_Compact_Layout</compactLayoutAssignment>
+    <label>Mortgage</label>
+    <picklistValues>
+        <picklist>Clinical_Stage__c</picklist>
+        <values>
+            <fullName>Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phase I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phase II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phase III</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Clinical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registration</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DeliveryInstallationStatus__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yet to begin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Dominant_Sector__c</picklist>
+        <values>
+            <fullName>Business Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Co-Living</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Datacentre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare %2F Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial %2F Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Land</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leisure %26 Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Life Sciences %2F R%26D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mixed Use</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail %28Food %2F Groceries%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail %28Other%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail %28Park%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail %28Shopping Centre%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retirement %2F Senior Living</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Storage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student Accommodation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FF_Loss_Reason__c</picklist>
+        <values>
+            <fullName>Lost to Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Budget %2F Lost Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Decision %2F Non-Responsive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Finance_Type__c</picklist>
+        <values>
+            <fullName>Acquisition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Build Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refinance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fixed_Floating__c</picklist>
+        <values>
+            <fullName>Fixed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Floating</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ForecastCategoryName</picklist>
+        <values>
+            <fullName>Best Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GLA_Unit__c</picklist>
+        <values>
+            <fullName>beds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>sqft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>sqm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>units</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Investment_Strategy__c</picklist>
+        <values>
+            <fullName>Aggregation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Play</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infra</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vanilla</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_Asset_Therapeutic_Area__c</picklist>
+        <values>
+            <fullName>Anti-Infectives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autoimmune</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autoimmune%2Finflammation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bleeding disorders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardiometabolic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardiovascular</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cosmetic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dentistry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dermatology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endocrine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gastrointestinal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genetic Diseases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hepatic diseases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Immunology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infectious disease</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inflammation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kidney diseases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicinal Cannabis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Metabolic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Musculoskeletal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neuroscience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ophthalmology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Otology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatrics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reproductive Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Respiratory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Various</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Women%27s Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wound Healing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loan_Type__c</picklist>
+        <values>
+            <fullName>Mezzanine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mezzanine %2B Pref</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whole Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whole Loan %2B Pref</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Property_Strategy__c</picklist>
+        <values>
+            <fullName>Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redevelopment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refinancing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Add</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sponsor_Type__c</picklist>
+        <values>
+            <fullName>Developer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operating Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Equity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PropCo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Strategy__c</picklist>
+        <values>
+            <fullName>Partnership Capital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residential Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SLB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Senior Debt</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Existing Customer - Downgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Customer - Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Customer - Upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Customer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

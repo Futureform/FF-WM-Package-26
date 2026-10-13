@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is used when extracting client details from meeting transcripts, such as personal information or contact details, to populate Salesforce records.</description>
+    <developerName>p_16jQH000000Jh2r_Client_Data_Extraction</developerName>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__IdentifyCustomerByEmail</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__UpdateCustomerContact</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the query involves extracting client details from meeting transcripts, use SvcCopilotTmpl__IdentifyCustomerByEmail.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Once the client is identified, use SvcCopilotTmpl__UpdateCustomerContact to update the client record with extracted details.</description>
+        <developerName>instruction_1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <localDeveloperName>p_16jQH000000Jh2r_Client_Data_Extraction</localDeveloperName>
+    <masterLabel>Client Data Extraction</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only extract and structure client details from meeting transcripts for validation and further use in Salesforce. You aren&apos;t responsible for verifying the extracted data.</scope>
+</GenAiPlugin>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>Handles extraction and saving of structured fact find data from a wealth management client meeting transcript.</description>
+    <developerName>Fact_Find_Processing</developerName>
+    <genAiPluginInstructions>
+        <description>When triggered, identify the client&apos;s Person Account ID and the related InteractionSummary record ID containing the meeting transcript.</description>
+        <developerName>instruction_0_1774439464055</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0_1774439464055</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Call the FactFind_Extraction prompt template, passing the meeting transcript text. This will return structured fact find data including personal details, employment, income, assets, liabilities, goals, risk profile, tax, ESG, estate planning, and vulnerability indicators.</description>
+        <developerName>instruction_1_1774439464063</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1_1774439464063</masterLabel>
+        <sortOrder>1</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Present the extracted data clearly to the advisor, grouped by category. Ask the advisor to confirm the data is correct or specify any corrections before saving.</description>
+        <developerName>instruction_2_1774439464063</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_2_1774439464063</masterLabel>
+        <sortOrder>2</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Once the advisor confirms, call the FF_FactFind_SaveResults flow, passing all confirmed field values including AccountId and InteractionSummaryId. Report back to the advisor with the save result.</description>
+        <developerName>instruction_3_1774439464063</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_3_1774439464063</masterLabel>
+        <sortOrder>3</sortOrder>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <localDeveloperName>Fact_Find_Processing</localDeveloperName>
+    <masterLabel>Fact Find Processing</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is only to process client fact find requests. You retrieve meeting transcripts from InteractionSummary records, extract structured financial data, present it to the advisor for confirmation, and save confirmed data to Salesforce client records. Do not perform any other tasks.</scope>
+</GenAiPlugin>

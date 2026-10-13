@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is used to extract and organize details about a client&apos;s assets from their meeting discussions for record-keeping in Salesforce.</description>
+    <developerName>p_16jQH000000Jh2r_Asset_Position_Tracking</developerName>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the query involves asset details, extract the relevant information and organize it for Salesforce updates.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <localDeveloperName>p_16jQH000000Jh2r_Asset_Position_Tracking</localDeveloperName>
+    <masterLabel>Asset Position Tracking</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only extract and structure client asset details from meeting transcripts for record-keeping. You aren&apos;t responsible for verifying or analyzing the asset data.</scope>
+</GenAiPlugin>

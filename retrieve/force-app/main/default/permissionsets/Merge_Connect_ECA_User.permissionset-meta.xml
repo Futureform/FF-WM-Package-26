@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grants access to the Merge Connect External Client App. Assign to the user(s) Merge Connect runs as for document generation (JWT Bearer flow).</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Merge Connect ECA User</label>
+</PermissionSet>

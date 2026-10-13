@@ -1,0 +1,290 @@
+<template>
+    <div class="ff-wrap">
+
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- SUBMITTED SUCCESS SCREEN                                          -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <template lwc:if={submittedSummary}>
+
+            <!-- Branded header (same as normal, but without Run button) -->
+            <div class="ff-header">
+                <div class="ff-header-left">
+                    <h2>Fact Find<template lwc:if={submittedSummary.clientName}>: {submittedSummary.clientName}</template></h2>
+                    <p class="ff-subtitle">
+                        <template lwc:if={submittedSummary.meetingDate}>Last meeting: {submittedSummary.meetingDate}</template>
+                    </p>
+                </div>
+                <div class="ff-header-right">
+                    <button class="ff-btn ff-btn-primary" onclick={handleRunAgain}>
+                        Run Fact Find Again
+                    </button>
+                </div>
+            </div>
+
+            <!-- Success body -->
+            <div class="ff-submitted">
+
+                <!-- Check circle -->
+                <div class="ff-submitted-check">✓</div>
+
+                <h3 class="ff-submitted-title">Fact Find Submitted</h3>
+                <p class="ff-submitted-meta">
+                    Submitted {submittedSummary.submittedAt}
+                    <template lwc:if={submittedSummary.meetingDate}> &bull; Meeting: {submittedSummary.meetingDate}</template>
+                </p>
+
+                <!-- Stat chips -->
+                <div class="ff-submitted-stats">
+                    <div class="ff-stat-chip">
+                        <span class="ff-stat-num">{submittedSummary.accountFields}</span>
+                        <span class="ff-stat-label">Account fields</span>
+                    </div>
+                    <div class="ff-stat-chip">
+                        <span class="ff-stat-num">{submittedSummary.goals}</span>
+                        <span class="ff-stat-label">Goals created</span>
+                    </div>
+                    <div class="ff-stat-chip">
+                        <span class="ff-stat-num">{submittedSummary.assets}</span>
+                        <span class="ff-stat-label">Assets created</span>
+                    </div>
+                    <div class="ff-stat-chip">
+                        <span class="ff-stat-num">{submittedSummary.liabilities}</span>
+                        <span class="ff-stat-label">Liabilities created</span>
+                    </div>
+                </div>
+
+                <!-- Narrative -->
+                <template lwc:if={submittedSummary.narrative}>
+                    <div class="ff-submitted-narrative">
+                        <p class="ff-submitted-narrative-title">Advisor Narrative</p>
+                        <p class="ff-submitted-narrative-text">{submittedSummary.narrative}</p>
+                    </div>
+                </template>
+
+                <button class="ff-btn ff-btn-primary ff-btn-run-again" onclick={handleRunAgain}>
+                    Run Fact Find Again
+                </button>
+
+            </div>
+        </template>
+
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- NORMAL COMPONENT (pre-submission)                                 -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <template lwc:else>
+
+            <!-- ── Header ──────────────────────────────────────────────────────── -->
+            <div class="ff-header">
+                <div class="ff-header-left">
+                    <h2>Fact Find<template lwc:if={accountName}>: {accountName}</template></h2>
+                    <p class="ff-subtitle">
+                        <template lwc:if={interactionDate}>Last meeting: {interactionDate}</template>
+                        <template lwc:else>Transcript data extraction &amp; review</template>
+                    </p>
+                </div>
+                <div class="ff-header-right">
+                    <template lwc:if={hasAiData}>
+                        <div class="ff-metrics-bar">
+                            <div class="ff-metric">
+                                <span class="ff-metric-label">Overall Confidence</span>
+                                <span class={overallConfidenceClass}>{overallConfidence}%</span>
+                            </div>
+                            <div class="ff-metric">
+                                <span class="ff-metric-label">Approved</span>
+                                <span class="ff-metric-value">{approvedCount}/{totalFieldCount}</span>
+                            </div>
+                        </div>
+                    </template>
+                    <button class="ff-btn ff-btn-primary"
+                            onclick={handleRunAI}
+                            disabled={isLoading}>
+                        <template lwc:if={isLoading}>Extracting…</template>
+                        <template lwc:else>Run Fact Find</template>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ── Error / success banners ──────────────────────────────────────── -->
+            <template lwc:if={errorMessage}>
+                <div class="ff-banner ff-banner-error">{errorMessage}</div>
+            </template>
+            <template lwc:if={successMessage}>
+                <div class="ff-banner ff-banner-success">{successMessage}</div>
+            </template>
+
+            <!-- ── Loading state ────────────────────────────────────────────────── -->
+            <template lwc:if={isLoading}>
+                <div class="ff-loading">
+                    <div class="ff-spinner"></div>
+                    <p>Analysing meeting transcript with AI…</p>
+                </div>
+            </template>
+
+            <!-- ── Empty state (no data yet) ────────────────────────────────────── -->
+            <template lwc:if={showEmptyState}>
+                <div class="ff-empty-state">
+                    <div class="ff-empty-icon">📋</div>
+                    <p>Click <strong>Run Fact Find</strong> to extract structured client data from the latest meeting transcript and review it field by field before saving.</p>
+                    <template lwc:if={noMeetingNotes}>
+                        <div class="ff-banner ff-banner-info">
+                            No meeting transcript found for this client. Please ensure an Interaction Summary with Meeting Notes exists before running the fact find.
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <!-- ── Main review UI (shown once AI data is loaded) ────────────────── -->
+            <template lwc:if={hasAiData}>
+
+                <div class="ff-body">
+
+                <!-- Left sidebar tab navigation -->
+                <div class="ff-tabs-nav">
+                    <template for:each={tabs} for:item="tab">
+                        <button key={tab.id}
+                                class={tab.tabBtnClass}
+                                data-tab={tab.id}
+                                onclick={handleTabClick}>
+                            <span class="ff-tab-label">{tab.label}</span>
+                            <span class="ff-tab-count">{tab.approvedCount}/{tab.fieldCount}</span>
+                        </button>
+                    </template>
+                    <!-- Narrative is a special tab -->
+                    <button class={narrativeTabClass}
+                            data-tab="narrative"
+                            onclick={handleTabClick}>
+                        <span class="ff-tab-label">Narrative</span>
+                    </button>
+                </div>
+
+                <!-- Right content area — tab panels -->
+                <div class="ff-tab-content">
+                <template for:each={tabs} for:item="tab">
+                    <div key={tab.id} class={tab.panelClass}>
+
+                        <!-- Section header with mass-action buttons -->
+                        <div class="ff-section-header">
+                            <div class="ff-section-actions">
+                                <button class="ff-btn ff-btn-ghost ff-btn-sm"
+                                        data-tab={tab.id}
+                                        onclick={handleApproveAll}>
+                                    Approve All
+                                </button>
+                                <button class="ff-btn ff-btn-ghost ff-btn-sm"
+                                        data-tab={tab.id}
+                                        onclick={handleRejectAll}>
+                                    Reject All
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Column headers -->
+                        <div class="ff-col-headers">
+                            <span class="ff-col-header">Field</span>
+                            <span class="ff-col-header">Current Value</span>
+                            <span class="ff-col-header">AI Suggested - edit to override</span>
+                            <span class="ff-col-header">Confidence</span>
+                            <span class="ff-col-header">Approve</span>
+                        </div>
+
+                        <!-- Field rows -->
+                        <template for:each={tab.fields} for:item="field">
+                            <div key={field.key}>
+                                <!-- Group header (Goals / Assets / Liabilities) -->
+                                <template lwc:if={field.showGroupHeader}>
+                                    <div class="ff-group-header">
+                                        <span class="ff-group-label">{field.groupLabel}</span>
+                                    </div>
+                                </template>
+
+                                <!-- Field row -->
+                                <div class={field.rowClass}>
+                                    <!-- Field label -->
+                                    <span class="ff-field-label">{field.label}</span>
+
+                                    <!-- Current DB value -->
+                                    <span class={field.currentValClass}
+                                          title={field.currentValue}>
+                                        {field.currentValue}
+                                    </span>
+
+                                    <!-- AI suggested value — editable in-place (3-way branch) -->
+                                    <template lwc:if={field.isSelect}>
+                                        <select class="ff-edit-input ff-edit-select"
+                                                data-key={field.key}
+                                                onchange={handleEditChange}>
+                                            <option value="">— Select —</option>
+                                            <template for:each={field.options} for:item="opt">
+                                                <option key={opt.value}
+                                                        value={opt.value}
+                                                        selected={opt.isSelected}>{opt.label}</option>
+                                            </template>
+                                        </select>
+                                    </template>
+                                    <template lwc:elseif={field.isTextarea}>
+                                        <textarea class="ff-edit-input ff-edit-textarea"
+                                                  data-key={field.key}
+                                                  onchange={handleEditChange}
+                                                  placeholder={field.aiPlaceholder}>{field.editValue}</textarea>
+                                    </template>
+                                    <template lwc:else>
+                                        <input class="ff-edit-input"
+                                               type={field.inputType}
+                                               value={field.editValue}
+                                               data-key={field.key}
+                                               onchange={handleEditChange}
+                                               placeholder={field.aiPlaceholder} />
+                                    </template>
+
+                                    <!-- Confidence badge -->
+                                    <span class={field.confBadgeClass}>{field.confLabel}</span>
+
+                                    <!-- Approve button -->
+                                    <button class={field.approveBtnClass}
+                                            data-key={field.key}
+                                            onclick={handleApproveField}>
+                                        {field.approveBtnLabel}
+                                    </button>
+                                </div>
+                            </div>
+                        </template>
+
+                    </div>
+                </template>
+
+                <!-- Narrative panel -->
+                <div class={narrativePanelClass}>
+                    <div class="ff-narrative-panel">
+                        <p class="ff-narrative-label">Advisor Narrative</p>
+                        <textarea class="ff-narrative-text"
+                                  rows="6"
+                                  onchange={handleNarrativeChange}
+                                  placeholder="Narrative will appear here after AI extraction…">{narrativeEditValue}</textarea>
+                    </div>
+                </div>
+
+                </div><!-- /ff-tab-content -->
+                </div><!-- /ff-body -->
+
+                <!-- Footer / submit bar -->
+                <div class="ff-footer">
+                    <span class="ff-footer-info">
+                        <strong>{approvedCount}</strong> field(s) approved and ready to submit.
+                        Unapproved fields will not overwrite existing Salesforce data.
+                    </span>
+                    <button class="ff-btn ff-btn-action"
+                            onclick={handleSubmit}
+                            disabled={isSubmitting}>
+                        <template lwc:if={isSubmitting}>Saving…</template>
+                        <template lwc:else>Submit Approved Fields</template>
+                    </button>
+                </div>
+
+            </template>
+            <!-- ── /hasAiData ──────────────────────────────────────────────────── -->
+
+        </template>
+        <!-- ── /lwc:else (normal component) ──────────────────────────────────── -->
+
+    </div>
+</template>

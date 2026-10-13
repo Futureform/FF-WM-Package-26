@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dominant_Sector__c</fullName>
+    <description>Primary sector classification for this real estate asset.</description>
+    <label>Dominant Sector</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business Park</fullName>
+                <default>false</default>
+                <label>Business Park</label>
+            </value>
+            <value>
+                <fullName>Co-Living</fullName>
+                <default>false</default>
+                <label>Co-Living</label>
+            </value>
+            <value>
+                <fullName>Datacentre</fullName>
+                <default>false</default>
+                <label>Datacentre</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Healthcare / Hospital</fullName>
+                <default>false</default>
+                <label>Healthcare / Hospital</label>
+            </value>
+            <value>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+                <label>Hotel</label>
+            </value>
+            <value>
+                <fullName>Industrial / Manufacturing</fullName>
+                <default>false</default>
+                <label>Industrial / Manufacturing</label>
+            </value>
+            <value>
+                <fullName>Land</fullName>
+                <default>false</default>
+                <label>Land</label>
+            </value>
+            <value>
+                <fullName>Leisure &amp; Hospitality</fullName>
+                <default>false</default>
+                <label>Leisure &amp; Hospitality</label>
+            </value>
+            <value>
+                <fullName>Life Sciences / R&amp;D</fullName>
+                <default>false</default>
+                <label>Life Sciences / R&amp;D</label>
+            </value>
+            <value>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+                <label>Logistics</label>
+            </value>
+            <value>
+                <fullName>Mixed Use</fullName>
+                <default>false</default>
+                <label>Mixed Use</label>
+            </value>
+            <value>
+                <fullName>Office</fullName>
+                <default>false</default>
+                <label>Office</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Residential</fullName>
+                <default>false</default>
+                <label>Residential</label>
+            </value>
+            <value>
+                <fullName>Retail (Food / Groceries)</fullName>
+                <default>false</default>
+                <label>Retail (Food / Groceries)</label>
+            </value>
+            <value>
+                <fullName>Retail (Other)</fullName>
+                <default>false</default>
+                <label>Retail (Other)</label>
+            </value>
+            <value>
+                <fullName>Retail (Park)</fullName>
+                <default>false</default>
+                <label>Retail (Park)</label>
+            </value>
+            <value>
+                <fullName>Retail (Shopping Centre)</fullName>
+                <default>false</default>
+                <label>Retail (Shopping Centre)</label>
+            </value>
+            <value>
+                <fullName>Retirement / Senior Living</fullName>
+                <default>false</default>
+                <label>Retirement / Senior Living</label>
+            </value>
+            <value>
+                <fullName>Self Storage</fullName>
+                <default>false</default>
+                <label>Self Storage</label>
+            </value>
+            <value>
+                <fullName>Student Accommodation</fullName>
+                <default>false</default>
+                <label>Student Accommodation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Days_Until_Birthday__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  ISBLANK(PersonBirthdate),
+  NULL,
+  IF(
+    AND(MONTH(PersonBirthdate) = 2, DAY(PersonBirthdate) = 29),
+    IF(
+      DATE(YEAR(TODAY()), 3, 1) &gt;= TODAY(),
+      DATE(YEAR(TODAY()), 3, 1) - TODAY(),
+      DATE(YEAR(TODAY()) + 1, 3, 1) - TODAY()
+    ),
+    IF(
+      DATE(YEAR(TODAY()), MONTH(PersonBirthdate), DAY(PersonBirthdate)) &gt;= TODAY(),
+      DATE(YEAR(TODAY()), MONTH(PersonBirthdate), DAY(PersonBirthdate)) - TODAY(),
+      DATE(YEAR(TODAY()) + 1, MONTH(PersonBirthdate), DAY(PersonBirthdate)) - TODAY()
+    )
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Days Until Birthday</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

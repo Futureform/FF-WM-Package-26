@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Gives user access to on-demand Record Rollups (Record Aggregation Access permission and read access to Record Aggregation Result records and fields).</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>FF - Record Rollups</label>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>RecordAggregationResult</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>RecordAggregationAccess</name>
+    </userPermissions>
+</PermissionSet>

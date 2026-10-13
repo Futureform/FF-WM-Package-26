@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>Extracts and saves fact find data from a wealth management meeting transcript. Handles personal details, employment, income, risk profile, financial goals, assets, liabilities, and vulnerability screening.</description>
+    <developerName>FF_FactFind_Topic</developerName>
+    <language>en_US</language>
+    <localDeveloperName>FF_FactFind_Topic</localDeveloperName>
+    <masterLabel>Fact Find Data Extraction</masterLabel>
+    <pluginType>Topic</pluginType>
+</GenAiPlugin>

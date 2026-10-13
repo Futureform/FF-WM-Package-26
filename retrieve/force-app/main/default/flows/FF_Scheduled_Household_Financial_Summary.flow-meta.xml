@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Run_Household_Financial_Summary</name>
+        <label>Run Household Financial Summary</label>
+        <locationX>666</locationX>
+        <locationY>328</locationY>
+        <actionName>FF_Household_Financial_Account_Summary</actionName>
+        <actionType>dataProcessingEngineAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>FF_Household_Financial_Account_Summary</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <interviewLabel>FF - Scheduled - Household Financial Summary {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FF - Scheduled - Household Financial Summary</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>540</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Run_Household_Financial_Summary</targetReference>
+        </connector>
+        <schedule>
+            <dayOfMonthToRun>0</dayOfMonthToRun>
+            <frequency>Weekly</frequency>
+            <frequencyNumber>0</frequencyNumber>
+            <startDate>2026-04-28</startDate>
+            <startTime>11:45:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

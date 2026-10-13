@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upcoming_Birthdays</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>PC_BIRTHDATE</columns>
+    <columns>FF_Days_Until_Birthday__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FF_Days_Until_Birthday__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>FF_Days_Until_Birthday__c</field>
+        <operation>lessOrEqual</operation>
+        <value>60</value>
+    </filters>
+    <label>Upcoming Birthdays</label>
+</ListView>
