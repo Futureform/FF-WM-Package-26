@@ -25,7 +25,7 @@ None found specific to reviews.
 None found.
 
 ## Extract potential
-**LOW** — insufficient information to rate confidently; needs the flow internals confirmed first.
+**NOT RECOMMENDED** — per the owner, this is a colleague-built flow related to a separate "Meeting Concierge" capability, not part of this WM template's scope. Leaving it out of packaging consideration; not pursuing further confirmation of its internals for now.
 
 ## Open questions / looks broken
-- `FF_Review_Outcome_Builder.flow-meta.xml` has no `<label>`/`<description>` populated — this is itself a documentation gap in the org, not just in this analysis. No Brain product identified for Reviews as a named capability — a fourth catalogue gap area, lowest confidence of the four given the thin source evidence.
+- `FF_Review_Outcome_Builder.flow-meta.xml` has no `<label>`/`<description>` populated. Resolved (session owner input): this belongs to a colleague's separate "Meeting Concierge" work, not this template — deprioritised, no further action needed here.
