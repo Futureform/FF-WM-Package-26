@@ -19,7 +19,7 @@ This is a small, focused template org (22 flows, 25 permission sets, 4 custom ob
 
 | What | Type | Why | Dependencies | Effort | Capability doc |
 | --- | --- | --- | --- | --- | --- |
-| Applications/Participant data model | 2 custom objects + 3 flows | Multi-participant application tracking with ownership %/contribution amounts | ApplicationForm, DocumentChecklistItem | Medium | [03](./capabilities/03-applications-and-onboarding.md) |
+| Applications/Participant data model | `FF_Application_Form_Product_Participant__c` + 3 flows (excludes `FF_Application__c` — packaging decision: use standard `ApplicationForm` + `FF Application` record type instead) | Multi-participant application tracking with ownership %/contribution amounts | ApplicationForm (`FF Application` record type), DocumentChecklistItem | Medium | [03](./capabilities/03-applications-and-onboarding.md) |
 | Document-checklist auto-expiry | Flow (`FF_DocumentChecklistItem_Scheduled`) | Daily scheduled expiry of accepted documents past their date — simple, reusable pattern | DocumentChecklistItem, `FF_Expiration_Date__c` | Low | [03](./capabilities/03-applications-and-onboarding.md) |
 | Historic Valuation snapshot object | Custom object (`Historic_Valuation__c`) | Point-in-time market valuation per FinancialAccount/holding | FinancialAccount | Medium | [04](./capabilities/04-financial-accounts-and-product-mix.md) |
 | Regulator propagation (Product → FinancialAccount) | 2 Flows | Keeps compliance data in sync automatically | Product2, FinancialAccount | Medium | [04](./capabilities/04-financial-accounts-and-product-mix.md) |

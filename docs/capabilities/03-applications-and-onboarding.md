@@ -7,7 +7,9 @@ Tracks a client's product application end-to-end: a standard `ApplicationForm` i
 `FF_Wealth_Management`.
 
 ## Record types
-ApplicationForm: 2 record types. FF_Application__c: 1 record type.
+ApplicationForm: 2 record types — `FF Application` (the template's own) and `Compass Application` (confirmed active, 0 records, unused — left over from other work, being manually deleted from dev26; record types can't be deleted via Metadata API, only through Setup). FF_Application__c: 1 record type.
+
+Packaging decision (this session): `FF_Application__c` is excluded from the template. The packaged pattern is standard `ApplicationForm` with the `FF Application` record type — not the custom object. `FF_Application_Form_Product_Participant__c` is retained (no standard equivalent).
 
 ## Key objects + key custom fields
 - `FF_Application__c`: `FF_Account__c`, `Secondary_Account__c`, `FF_Application_Status__c`, `FF_Submission_Date__c`, `FF_Completion_Date__c`, `FF_Expiry_Date__c`, `FF_Description__c`.
@@ -34,4 +36,4 @@ None found.
 
 ## Open questions / looks broken
 - Brain match: Applications (WM-301, `WMT2-38`) is Full; this session's `FF_Application_Name_Link__c` FLS fix most closely matches `WMT2-149`.
-- Whether `FF_Application__c` genuinely needs to exist alongside standard `ApplicationForm`, or whether some of its fields could live natively on `ApplicationForm`, is untested — flagging per the simplicity-check ladder rather than asserting either way.
+- Resolved this session: `FF_Application__c` will not be packaged — standard `ApplicationForm` + `FF Application` record type is the lighter, sufficient mechanism. `ApplicationForm` was a retrieval blind spot in Pass 1 (a standard FSC object not in the batch-C named list), which is why its record types weren't visible in source; confirmed directly against dev26 instead.
