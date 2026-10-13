@@ -29,6 +29,9 @@ None found.
 ## Extract potential
 **HIGH** — the Opportunity-to-FinancialAccount handoff (with Person-vs-Household party resolution and dedupe-by-account-number) is a strong, broadly-needed FSC pattern.
 
+## Jira
+Fully represented despite the Brain gap below — epic `WMT2-50` (Financial Account Opening) with children `WMT2-166` (Financial Account Creation), `WMT2-339` (Financial Account Party Creation), `WMT2-352` (Financial Account Types), `WMT2-353` (Link to Opportunity). All four checked directly against `FF_Opportunity_Create_Financial_Account` this session and confirmed accurate; `WMT2-353` was stuck at Backlog despite the build already meeting it and has been transitioned to UAT to match its siblings.
+
 ## Open questions / looks broken
-- No Brain product currently names this specific capability (the Opportunity→FinancialAccount handoff). Closest adjacent catalogue entries are Applications (WM-301) and Financial Summaries and Rollups (WM-508), neither of which actually covers it — **flagging as a second catalogue gap**, separate from the Lead Conversion one already proposed.
+- No Brain product currently names this specific capability (the Opportunity→FinancialAccount handoff). Closest adjacent catalogue entries are Applications (WM-301) and Financial Summaries and Rollups (WM-508), neither of which actually covers it — **flagging as a second catalogue gap**, separate from the Lead Conversion one already proposed. This is a Brain catalogue gap only — the Jira backlog already covers the capability accurately (see Jira section above).
 - `FF_Update_Regulator`'s prefix-based routing (reading the first three digits of a record number to decide the path) is a mild cross-object-hack pattern worth a closer look under the antipatterns lens if this gets reused elsewhere.

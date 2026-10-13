@@ -32,6 +32,9 @@ None found.
 ## Extract potential
 **MEDIUM** — the change-of-details pattern (screen flow → Case → Action Plan → document acceptance → auto-close) is generically useful, but the four near-identical per-field-type flows (`FF_Case_Update_Address/ClientName/DateOfBirth/MaritalStatus`) are a **duplication-across-flows** antipattern candidate: four flows doing the same shape of work for four different fields. Worth consolidating into one parameterised flow before extraction.
 
+## Jira
+Fully represented despite the Brain gap below — epic `WMT2-70` (Change of Details) with 14 children covering all 9 flows: `WMT2-324/327/330/331` (per-field updates), `WMT2-332` (general contact details), `WMT2-333`/`WMT2-413` (Close Case action + its bug), `WMT2-335` (Case statuses), `WMT2-404` (enforce document upload), `WMT2-372` (marital-status/name cross-prompt), `WMT2-310` (adjustments), plus `WMT2-328/329/376/405` (postcode/county/DOB validation bugs and enhancements). Confirmed via comment on `WMT2-70` this session, including the flow-duplication note below.
+
 ## Open questions / looks broken
-- No Brain product currently names "change of details" / case-driven servicing as its own capability — a third catalogue gap, distinct from the two already raised (Lead Conversion, Financial Account handoff). Not proposing a product for this one yet — flagging for your call on whether it's in scope for a Brain write-back this round.
+- No Brain product currently names "change of details" / case-driven servicing as its own capability — a third catalogue gap, distinct from the two already raised (Lead Conversion, Financial Account handoff). Not proposing a product for this one yet — flagging for your call on whether it's in scope for a Brain write-back this round. This is a Brain catalogue gap only — the Jira backlog already covers the capability accurately (see Jira section above).
 - The four parallel `FF_Case_Update_*` flows are the clearest **automation-duplication** signal found in this org — recommend reviewing against the record-triggered automation decision guide before anyone copies this pattern into another org.
