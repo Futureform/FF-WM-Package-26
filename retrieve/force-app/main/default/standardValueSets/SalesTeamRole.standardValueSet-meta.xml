@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Lead Adviser</fullName>
+        <default>false</default>
+        <label>Lead Adviser</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Associate Adviser</fullName>
+        <default>false</default>
+        <label>Associate Adviser</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Paraplanner</fullName>
+        <default>false</default>
+        <label>Paraplanner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Client Administrator</fullName>
+        <default>false</default>
+        <label>Client Administrator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Practice Manager</fullName>
+        <default>false</default>
+        <label>Practice Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mortgage Adviser</fullName>
+        <default>false</default>
+        <label>Mortgage Adviser</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Protection Adviser</fullName>
+        <default>false</default>
+        <label>Protection Adviser</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Investment Analyst</fullName>
+        <default>false</default>
+        <label>Investment Analyst</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Compliance Officer</fullName>
+        <default>false</default>
+        <label>Compliance Officer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Relationship Manager</fullName>
+        <default>false</default>
+        <label>Relationship Manager</label>
+    </standardValue>
+</StandardValueSet>
