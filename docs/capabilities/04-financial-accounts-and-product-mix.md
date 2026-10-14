@@ -3,6 +3,8 @@
 ## What it is
 The core sales-to-servicing handoff: when an Opportunity (Bank Account / Investment / Mortgage / Pension / Protection) closes won, a matching FinancialAccount is created or reused, record-typed to match the Opportunity, and the right `FinancialAccountParty` records are built — one party for a Person Account, one per Contact Role for a Household. Regulator changes on a Product propagate down to every FinancialAccount linked to it. `Historic_Valuation__c` captures point-in-time market valuations per FinancialAccount/security holding.
 
+The capability also carries the account's full financial position: Financial Goals (surfaced on the Person Account via an OmniStudio FlexCard), Holdings (`SecuritiesHolding`), Valuations (`Historic_Valuation__c`) and Transactions/Balances (`FinancialAccountTransaction`, `FinancialAccountBalance`), each used as a standard FSC object apart from the three `FF_`-prefixed fields on `SecuritiesHolding`. Confirmed directly against live `dev26` metadata and data on 13 October 2026.
+
 ## Apps
 `FF_Wealth_Management`.
 
@@ -10,7 +12,17 @@ The core sales-to-servicing handoff: when an Opportunity (Bank Account / Investm
 Opportunity: 5 (Bank Account, Investment, Mortgage, Pension, Protection) — mirrored exactly on FinancialAccount's 5 record types.
 
 ## Key objects + key custom fields
-FinancialAccount, FinancialAccountParty, Opportunity, Product2, `Historic_Valuation__c` (`FF_Financial_Account__c`, `FF_Market_Value__c`, `FF_Market_Value_Date_Time__c`, `FF_Price__c`, `FF_Provider__c`, `FF_Securities_Holding__c`, `Shares__c`, `FF_Status__c`).
+- FinancialAccount, FinancialAccountParty, Opportunity, Product2.
+- `Historic_Valuation__c` (`FF_Financial_Account__c`, `FF_Market_Value__c`, `FF_Market_Value_Date_Time__c`, `FF_Price__c`, `FF_Provider__c`, `FF_Securities_Holding__c`, `Shares__c`, `FF_Status__c`).
+- `FinancialGoal` (standard FSC object, no custom fields; 17 live records) — accessed from the Person Account via an OmniStudio FlexCard (`FinancialGoals`) embedded on `FF_Person_Account_Record_Page`.
+- `SecuritiesHolding` (standard FSC object; 36 fields, 3 custom — `FF_Historic_Valuation__c` lookup to `Historic_Valuation__c`, `FF_Provider__c`, `FF_Financial_Account_Identifier__c`; 1 live record) — Holdings.
+- `FinancialAccountTransaction` (standard FSC object, no customization; 1 live record) — Transactions.
+- `FinancialAccountBalance` (standard FSC object, no customization; 8 live records) — Balances.
+
+## Reports
+Two FFReports-folder reports, both embedded as report-chart components on `FF_Financial_Account_Record_Page`:
+- `Financial_Account_Balance_Uyu` ("Balance Amount Over Time") — line chart on `FinancialAccountBalance.Amount`, grouped by date and type, filtered to the Financial Account.
+- `Market_Valuation_nDJ` ("Market Value Over Time") — line chart on `Historic_Valuation__c.FF_Market_Value__c`, grouped by valuation date.
 
 ## Automation
 - `FF_Opportunity_Create_Financial_Account` (AutoLaunchedFlow, Opportunity Closed Won) — core sales-to-servicing handoff described above.
@@ -18,7 +30,10 @@ FinancialAccount, FinancialAccountParty, Opportunity, Product2, `Historic_Valuat
 - `FF_Update_Regulator` (Flow) — screen flow routing by Product vs FinancialAccount origin, based on a record-number prefix check.
 
 ## UI
-Standard FinancialAccount/Opportunity pages; `FF_Update_Regulator` is launched as an Action Launcher screen flow.
+Standard FinancialAccount/Opportunity pages; `FF_Update_Regulator` is launched as an Action Launcher screen flow. `FF_Person_Account_Record_Page` embeds the `FinancialGoals` OmniStudio FlexCard; `FF_Financial_Account_Record_Page` embeds the two report charts above.
+
+## Opportunities
+This capability also realises five per-product Brain products: *Bank Account*, *Investment*, *Mortgage*, *Pension* and *Protection — Opportunities, Opportunity Contacts and Teams* (Jira `WMT2-22` through `WMT2-26`). Mortgage is the only one currently marked `Published` in the Brain catalogue; the other four show `Status__c = None` despite the underlying Opportunity record-type and handoff logic being built and shared across all five — a write-back candidate to flag to the Brain owner, not to action directly (agents never write to production Brain records).
 
 ## Personas
 `FF_Opportunity`, `FF_Products`, `FF_Fund_Switch_Fields` permission sets.
