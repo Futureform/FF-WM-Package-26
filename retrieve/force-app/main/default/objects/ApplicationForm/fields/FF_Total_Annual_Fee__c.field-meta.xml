@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Total_Annual_Fee__c</fullName>
+    <label>Total Annual Fee</label>
+    <summarizedField>ApplicationFormProduct.FF_Annual_Fee__c</summarizedField>
+    <summaryForeignKey>ApplicationFormProduct.ApplicationFormId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Provider__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Links the financial account to the Provider—the financial institution responsible for managing, issuing, or administering the product.</description>
+    <label>Provider</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Financial Accounts (Provider)</relationshipLabel>
+    <relationshipName>Financial_Accounts1</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

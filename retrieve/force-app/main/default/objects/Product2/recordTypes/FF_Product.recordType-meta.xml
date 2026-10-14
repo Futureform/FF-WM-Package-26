@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Product</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>FF_Product_Compact_Layout</compactLayoutAssignment>
+    <label>FF Product</label>
+    <picklistValues>
+        <picklist>FF_Asset_Class__c</picklist>
+        <values>
+            <fullName>Alternatives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global ex-US Equity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK Equity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US Equity</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FF_ESG_Classification__c</picklist>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Responsible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sustainable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FF_Fund_Management_Type__c</picklist>
+        <values>
+            <fullName>Active with Constraints</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fully Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FF_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Pending Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retired</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FF_Sub_Type__c</picklist>
+        <values>
+            <fullName>Accident Sickness and Unemployment Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accident and Sickness Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accidental Death Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional Voluntary Contributions %28AVC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advisory Managed Portfolio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alternatively Secured Pension %28ASP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annuity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bridging Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buy-to-Let Mortgage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash Deposit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Child Trust Fund %28CTF%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Bonds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Illness Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Currency Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decreasing Term Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Defined Benefit Pension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Defined Contribution Pension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discretionary Managed Portfolio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drawdown Pension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employer Pension Scheme</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enhanced Annuity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Investment Scheme %28EIS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exchange Traded Fund %28ETF%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Income Benefit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed Rate Mortgage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed-Term Deposit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free-Standing AVC %28FSAVC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funeral Plans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Investment Account %28GIA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government Gilts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group Personal Pension %28GPP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Help to Buy Mortgage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISA %E2%80%93 Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Income Protection Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individual Equities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interest-Only Mortgage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Junior ISA %28Cash%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Junior ISA %28Stocks %26 Shares%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Key Person Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level Term Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Life Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lifetime Mortgage %28Equity Release%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Model Portfolio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mortgage Protection Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National Savings %26 Investments %28NS%26I%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notice Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEIC %28Open-Ended Investment Company%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offset Mortgage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offshore Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onshore Bond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Pension Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium Bonds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Medical Insurance %28PMI%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased Life Annuity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relevant Life Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residential Mortgage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retirement Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Second Charge Mortgage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Invested Personal Pension %28SIPP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shared Ownership Mortgage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shareholder Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stakeholder Pension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Pension Forecast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stocks %26 Shares ISA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Structured Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Term Assurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tracker Mortgage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Variable Rate Mortgage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venture Capital Trust %28VCT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whole of Life</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FF_Type__c</picklist>
+        <values>
+            <fullName>Bank Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mortgage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Protection</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Family</picklist>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QuantityUnitOfMeasure</picklist>
+        <values>
+            <fullName>Each</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

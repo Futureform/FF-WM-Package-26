@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Historic_Valuation__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Links to the most recent Historic Valuation record associated with this Security Holding. Used to display the latest available market value, pricing, or performance data for the holding.</description>
+    <label>Latest Valuation</label>
+    <referenceTo>Historic_Valuation__c</referenceTo>
+    <relationshipLabel>Securities Holdings</relationshipLabel>
+    <relationshipName>Securities_Holdings</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

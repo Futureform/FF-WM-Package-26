@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Regulator__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Identifies the regulatory authority overseeing the product to ensure compliance with jurisdiction-specific regulations.</description>
+    <label>Regulator</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The account you are trying to add is not a Regulator. Please choose a Regulator.</errorMessage>
+        <filterItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Regulator</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Products (Regulator)</relationshipLabel>
+    <relationshipName>Products</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

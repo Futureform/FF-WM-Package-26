@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Advice_Type__c</fullName>
+    <description>Type of advice provided to the client.</description>
+    <label>Advice Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Initial Advice</fullName>
+                <default>false</default>
+                <label>Initial Advice</label>
+            </value>
+            <value>
+                <fullName>Additional Advice</fullName>
+                <default>false</default>
+                <label>Additional Advice</label>
+            </value>
+            <value>
+                <fullName>Periodic Review Advice</fullName>
+                <default>false</default>
+                <label>Periodic Review Advice</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

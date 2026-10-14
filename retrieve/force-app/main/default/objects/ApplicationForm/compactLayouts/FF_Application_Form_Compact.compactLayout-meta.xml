@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Application_Form_Compact</fullName>
+    <fields>FF_Application_Name__c</fields>
+    <fields>AccountId</fields>
+    <fields>FF_Advice_Date__c</fields>
+    <fields>SubmittedById</fields>
+    <fields>SubmissionDate</fields>
+    <label>FF Application Form Compact</label>
+</CompactLayout>
