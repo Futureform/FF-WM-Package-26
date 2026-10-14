@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>FF_Leads</members>
+        <members>FF_Send_Emails</members>
+        <members>FF_Business_Milestones</members>
+        <members>FF_Change_of_Details_Action</members>
+        <members>FF_Run_Flows</members>
+        <members>FF_Cases_Read_Create</members>
+        <members>FF_Activity_Management</members>
+        <members>FF_CampaignsPermissionSet</members>
+        <members>FF_Application</members>
+        <members>FF_Financial_Data</members>
+        <members>FF_Party_Relationship_Group</members>
+        <members>FF_Fund_Switch_Fields</members>
+        <members>FF_CRMA_Integration_FSC_Objects</members>
+        <members>FF_Interaction_Summaries</members>
+        <members>FF_Products</members>
+        <members>FF_Action_Plan_and_Action_Plan_Template_Permissions</members>
+        <members>FF_Record_Rollups</members>
+        <members>FF_Opportunity</members>
+        <members>FF_Accounts</members>
+        <members>FF_Contacts</members>
+        <members>FF_Cases_Full_Access</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>FF_Wealth_Advisor</members>
+        <members>FF_Client_Servicing</members>
+        <name>PermissionSetGroup</name>
+    </types>
+    <types>
+        <members>FF Wealth Standard User</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>AccountContactRelation</members>
+        <name>CustomObject</name>
+    </types>
+    <version>66.0</version>
+</Package>
