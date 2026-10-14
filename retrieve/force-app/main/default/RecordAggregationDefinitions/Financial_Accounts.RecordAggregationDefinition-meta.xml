@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordAggregationDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregateFromObject>FinancialAccount</aggregateFromObject>
+    <aggregateToObject>Account</aggregateToObject>
+    <aggregationType>Record</aggregationType>
+    <batchProcessingDefinition>RECORD_AGGREGATION_DEFINITION</batchProcessingDefinition>
+    <description>Aggregates financial accounts at an account level.</description>
+    <displayName>Financial Accounts</displayName>
+    <onDemandProcDefinition>OD_Financial_Accounts</onDemandProcDefinition>
+    <recordAggregationObject>
+        <associatedObject>Account</associatedObject>
+        <developerName>Account</developerName>
+        <masterLabel>Account</masterLabel>
+        <recordAggregationJoinCondition>
+            <joinField>Id</joinField>
+            <navigationSequenceNumber>1</navigationSequenceNumber>
+            <relatedJoinField>Account</relatedJoinField>
+            <relatedRecordAggregationObject>FinancialAccountParty</relatedRecordAggregationObject>
+            <type>Intermediate</type>
+        </recordAggregationJoinCondition>
+    </recordAggregationObject>
+    <recordAggregationObject>
+        <associatedObject>FinancialAccount</associatedObject>
+        <developerName>FinancialAccount</developerName>
+        <masterLabel>FinancialAccount</masterLabel>
+    </recordAggregationObject>
+    <recordAggregationObject>
+        <associatedObject>FinancialAccountParty</associatedObject>
+        <developerName>FinancialAccountParty</developerName>
+        <masterLabel>FinancialAccountParty</masterLabel>
+        <recordAggregationJoinCondition>
+            <joinField>FinancialAccount</joinField>
+            <navigationSequenceNumber>2</navigationSequenceNumber>
+            <relatedJoinField>Id</relatedJoinField>
+            <relatedRecordAggregationObject>FinancialAccount</relatedRecordAggregationObject>
+            <type>Intermediate</type>
+        </recordAggregationJoinCondition>
+    </recordAggregationObject>
+    <status>Active</status>
+</RecordAggregationDefinition>
