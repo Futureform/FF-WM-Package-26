@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Total_Switch_Amount__c</fullName>
+    <label>Total Switch Amount</label>
+    <summarizedField>ApplicationFormProduct.FF_Switch_Amount__c</summarizedField>
+    <summaryForeignKey>ApplicationFormProduct.ApplicationFormId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

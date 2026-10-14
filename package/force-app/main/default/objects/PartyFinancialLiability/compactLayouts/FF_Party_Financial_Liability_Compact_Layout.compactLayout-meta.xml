@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Party_Financial_Liability_Compact_Layout</fullName>
+    <fields>Type</fields>
+    <fields>StartDate</fields>
+    <fields>EndDate</fields>
+    <label>FF Party Financial Liability Compact Layout</label>
+</CompactLayout>

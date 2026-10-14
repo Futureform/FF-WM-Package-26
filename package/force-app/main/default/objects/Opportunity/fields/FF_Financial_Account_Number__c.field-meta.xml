@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Financial_Account_Number__c</fullName>
+    <description>When an opportunity is set to closed on this field has to be populated with the appropriate Policy/Insurance/Mortgage/Pension/Bank Account number</description>
+    <externalId>false</externalId>
+    <label>Financial Account Number</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

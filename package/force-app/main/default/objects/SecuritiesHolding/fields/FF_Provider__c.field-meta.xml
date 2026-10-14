@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Provider__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Links Securities Holding to the Provider</description>
+    <label>Provider</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Please select a Provider Account</errorMessage>
+        <filterItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Provider</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Securities Holdings</relationshipLabel>
+    <relationshipName>Securities_Holdings</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

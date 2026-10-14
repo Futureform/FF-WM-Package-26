@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Provider__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Links each product to the financial institution or entity responsible for creating or managing the product offering.</description>
+    <label>Provider</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The account you are trying to add is not a Provider. Please choose a Provider</errorMessage>
+        <filterItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Provider</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Products (Provider)</relationshipLabel>
+    <relationshipName>Products1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

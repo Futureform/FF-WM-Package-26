@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Party_Relationship_Group</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>FF_PRG_Compact_Layout</compactLayoutAssignment>
+    <label>FF Party Relationship Group</label>
+    <picklistValues>
+        <picklist>Category</picklist>
+        <values>
+            <fullName>Meals together</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staying under same roof</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subtype</picklist>
+        <values>
+            <fullName>Extension Household</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nuclear Household</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Three Person Household</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Financial_Account_Number_Blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    OR(
+        ISPICKVAL(StageName, &quot;Closed Won&quot;),
+        ISPICKVAL(StageName, &quot;Policy Issued&quot;),
+        ISPICKVAL(StageName, &quot;Complete&quot;),
+        ISPICKVAL(StageName, &quot;Funds Issued&quot;)
+    ),
+    ISBLANK(FF_Financial_Account_Number__c)
+)</errorConditionFormula>
+    <errorMessage>Please ensure that the Financial Account Number is populated</errorMessage>
+</ValidationRule>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>FF Wealth Advisor</label>
+    <permissionSets>FF_Accounts</permissionSets>
+    <permissionSets>FF_Action_Plan_and_Action_Plan_Template_Permissions</permissionSets>
+    <permissionSets>FF_Application</permissionSets>
+    <permissionSets>FF_Business_Milestones</permissionSets>
+    <permissionSets>FF_CampaignsPermissionSet</permissionSets>
+    <permissionSets>FF_Cases_Read_Create</permissionSets>
+    <permissionSets>FF_Contacts</permissionSets>
+    <permissionSets>FF_Financial_Data</permissionSets>
+    <permissionSets>FF_Leads</permissionSets>
+    <permissionSets>FF_Opportunity</permissionSets>
+    <permissionSets>FF_Party_Relationship_Group</permissionSets>
+    <permissionSets>FF_Products</permissionSets>
+    <permissionSets>FF_Record_Rollups</permissionSets>
+    <permissionSets>FF_Run_Flows</permissionSets>
+    <permissionSets>force__AnalyticsStoreUser</permissionSets>
+    <permissionSets>force__FSCSales</permissionSets>
+    <permissionSets>force__FinancialServicesCloudExtension</permissionSets>
+    <permissionSets>force__IndustriesServiceExcellence</permissionSets>
+    <permissionSets>force__OmniStudioUser</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

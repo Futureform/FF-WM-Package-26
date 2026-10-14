@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Application_Form_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The application form product this participant is associated with.</description>
+    <label>Application Form Product</label>
+    <referenceTo>ApplicationFormProduct</referenceTo>
+    <relationshipName>FF_Application_Form_Product_Participants</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

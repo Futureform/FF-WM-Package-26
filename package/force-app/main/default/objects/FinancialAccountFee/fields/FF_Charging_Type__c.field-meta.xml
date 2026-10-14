@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Charging_Type__c</fullName>
+    <description>Specifies the method by which the fee for the financial account is calculated. This field determines the basis or structure for charging fees.</description>
+    <label>Charging Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>% Total Investment Contribution</fullName>
+                <default>false</default>
+                <label>% Total Investment Contribution</label>
+            </value>
+            <value>
+                <fullName>% Regular Contribution</fullName>
+                <default>false</default>
+                <label>% Regular Contribution</label>
+            </value>
+            <value>
+                <fullName>Fixed Price</fullName>
+                <default>false</default>
+                <label>Fixed Price</label>
+            </value>
+            <value>
+                <fullName>% AUM</fullName>
+                <default>false</default>
+                <label>% AUM</label>
+            </value>
+            <value>
+                <fullName>Non-Chargeable</fullName>
+                <default>false</default>
+                <label>Non-Chargeable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
