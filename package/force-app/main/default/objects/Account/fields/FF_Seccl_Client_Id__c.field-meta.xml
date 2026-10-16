@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Seccl_Client_Id__c</fullName>
+    <description>Seccl platform client ID for this client, written back by ff-salesforce-sapi once the Seccl client record exists.</description>
+    <externalId>false</externalId>
+    <label>Seccl Client Id</label>
+    <length>40</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

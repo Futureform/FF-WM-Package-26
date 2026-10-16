@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Platform_Error__c</fullName>
+    <description>Platform (Seccl) error message for a Failed account-opening status on this Opportunity; cleared once the status is no longer Failed.</description>
+    <label>Platform Error</label>
+    <length>1000</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Platform_Request_Id__c</fullName>
+    <description>Idempotency key for the platform (Seccl) account-opening request tied to this Opportunity, so a retry reuses the same request.</description>
+    <externalId>false</externalId>
+    <label>Platform Request Id</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
