@@ -2,7 +2,7 @@
 
 A clean, deployable sfdx project built from the `dev26` rediscovery analysis in this repo (see root [README.md](../README.md)). This is the scoped, curated subset of the org worth shipping as a reusable Wealth Management template — the AI Fact Find agent, demo cruft and cross-industry sample fields excluded.
 
-Validated with a dry-run deploy against `dev26`: `0` component errors, `1178`/`1178` components.
+Validated 2026-11-15 by real deploy to a fresh Developer Edition org after the pre-deployment steps: pass 1 `1178`/`1178` components, pass 2 `5`/`5`, `0` errors.
 
 ## Scope
 
@@ -25,28 +25,66 @@ See [docs/extract-candidates.md](../docs/extract-candidates.md) for the full tie
 
 ## Pre-deployment steps
 
-Before deploying into a target org, enable the following in Setup (per the [Wealth Management Template Deployment Guide](https://futureform.atlassian.net/wiki/spaces/FAT/pages/821133313)):
+Run these in order against the target org **before** deploying `force-app/`. Verified on 2026-11-15 against a fresh Developer Edition org with Financial Services Cloud licences. Full log with dates, methods and findings: [../docs/predeploy-log.md](../docs/predeploy-log.md).
 
-- Enable Account Teams
-- Enable Account-Contact Relationships (Account Settings)
-- Enable Opportunity Teams
-- Enable Person Accounts
-- Enable Financial Account Management Standard Objects (Financial Account Settings)
-- Enable Financial Summary Rollups for Standard Objects (Financial Summary Rollup Settings)
-- Enable Standard Group Membership (Group Membership Settings)
-- Enable Interaction Summaries
-- Check "Show Closed Statuses in Case Status Field" (Support Settings)
-- Enable Country Picklists (State and Country/Territory Picklists)
-- Check "Custom Address Fields" (User Interface)
-- Check "Enable Middle Names" for Person Names (User Interface)
-- Enable On-Demand Record Roll-Ups (Record Rollup Settings)
-- Enable Data Pipeline (Data Pipeline settings)
+**Step A: deploy the settings that can be deployed as metadata.** This covers 10 of the 16 steps below and the placeholder `FF_Business` Account record type that Person Accounts needs.
+
+```
+cd pre-deploy
+sf project deploy start --target-org <alias> --source-dir force-app
+```
+
+**Step B: enable Person Accounts** (Setup > Person Accounts). Run the readiness check, acknowledge the org impacts, click Enable. **This is permanent and cannot be undone.** It only becomes available after Step A has created a business Account record type.
+
+**Step B2: assign the Digital Lending licence and permission set to the deploying user.** Without it the objects `ApplicationFormTerm`, `Term` and `ApplicantApplicantRelation` do not exist for that user, and three layouts (Applicant, FF Applicant, Application Form) fail to deploy. The org must hold the Digital Lending permission set licence (`DigitalLendingPsl`).
+
+```
+sf org assign permsetlicense --name DigitalLendingPsl --target-org <alias>
+sf org assign permset --name DigitalLending --target-org <alias>
+```
+
+**Step C: do the remaining UI-only steps** (no metadata setting exists for these):
+
+| Step | Where |
+|---|---|
+| Allow users to relate a contact to multiple accounts (Account-Contact Relationships). **Do not set this through metadata**: the flag then shows as ticked but the `AccountContactRelation` object is never created, and the checkbox cannot be unticked in Setup. Tick it in the UI | Setup > Account Settings > Edit |
+| Check "Show Closed Statuses in Case Status Field" | Setup > Support Settings |
+| Enable Data Pipeline | Setup > Data Pipeline > Getting Started (toggle) |
+| Enable State and Country/Territory Picklists | Setup > State and Country/Territory Picklists: (1) scan, (2) convert and map every value, (3) Confirm Changes > Finish and Enable Picklists. **Permanent.** Any value with no valid match (for example a non-state in a state field) can only be mapped to "Unknown value" |
+
+**What each step enables:**
+
+| # | Setting | Done by |
+|---|---|---|
+| 1 | Account Teams | Step A (`Settings:Account`) |
+| 2 | Account-Contact Relationships | Step C (UI only) |
+| 3 | Opportunity Teams | Step A (`Settings:Opportunity`) |
+| 4 | Person Accounts | Step B |
+| 5 | Financial Account Management standard objects | Step A (`Settings:Industries`) |
+| 6 | Financial Summary Rollups for standard objects | Step A (`Settings:Industries`) |
+| 7 | Standard Group Membership | Step A (`Settings:Industries`) |
+| 8 | Interaction Summaries | Step A (`Settings:Industries`) |
+| 9 | Show Closed Statuses in Case Status Field | Step C |
+| 10 | Country and State picklists | Step C |
+| 11 | Custom Address Fields | Step A (`Settings:CustomAddressField`) |
+| 12 | Middle Names for Person Names | Step A (`Settings:Name`) |
+| 13 | On-Demand Record Roll-Ups | Step A (`Settings:Industries`) |
+| 14 | Data Pipeline | Step C |
+| 15 | Account field history tracking (not in the original guide; `FF_Communication_Preferences__c` and `FF_Marital_Status__c` need it) | Step A (`Settings:Account`) |
+| 16 | Record Rollups (not in the original guide; Record Aggregation Definitions need it) | Step A (`Settings:Industries`) |
+| 17 | Digital Lending licence and permission set assigned to the deploying user (not in the original guide) | Step B2 |
 
 ## Deploy
 
+Deploy in two passes, in this order. The second pass holds the two record action deployments that depend on flows being active, the two record pages that use them, and the app that points at those pages. A single-pass deploy fails with "Looks like this flow is inactive", because flows are only activated at the end of a deployment.
+
 ```
+cd package
 sf project deploy start --target-org <alias> --source-dir force-app
+sf project deploy start --target-org <alias> --source-dir force-app-late
 ```
+
+Five flows deploy as Draft by design (`FF_Household_Naming_ACR_Change`, `FF_Household_Naming_ACR_Delete`, `FF_Household_Naming_Recalculate`, `FF_Scheduled_Account_Financial_Summary`, `FF_Scheduled_Household_Financial_Summary`); they are Draft in dev26 too.
 
 ## Post-deployment steps
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionLauncherItemDef xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identifier>_14uy3vwobmuhm16rj8my52s0vr</identifier>
+    <itemActionType>Omniscript</itemActionType>
+    <itemCategory>dbBased</itemCategory>
+    <itemLanguage>English</itemLanguage>
+    <masterLabel>FSCAddressUpdate/CreateRequest/English</masterLabel>
+    <subType>CreateRequest</subType>
+    <type>FSCAddressUpdate</type>
+</ActionLauncherItemDef>
