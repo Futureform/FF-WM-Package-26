@@ -76,7 +76,7 @@ sf org assign permset --name DigitalLending --target-org <alias>
 
 ## Deploy
 
-Deploy in two passes, in this order. The second pass holds the two record action deployments that depend on flows being active, the two record pages that use them, and the app that points at those pages. A single-pass deploy fails with "Looks like this flow is inactive", because flows are only activated at the end of a deployment.
+Deploy in two passes, in this order. The second pass holds the two record action deployments that depend on flows being active, the two record pages that use them, and the app that points at those pages. It also holds the System Administrator profile, which makes the FF Wealth Management app the admin's default and assigns the FF record types and page layouts; the profile has to come after the app it references. A single-pass deploy fails with "Looks like this flow is inactive", because flows are only activated at the end of a deployment.
 
 ```
 cd package
