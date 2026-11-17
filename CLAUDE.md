@@ -8,7 +8,10 @@ When asked to deploy this package to an org, follow `package/README.md` (Pre-dep
 2. Do the pre-deployment steps in order. Run the CLI steps yourself (settings package in `pre-deploy/`, Digital Lending licence and permission set assignment).
 3. For Setup screens that have no metadata setting (contacts to multiple accounts, Show Closed Statuses, Data Pipeline, Person Accounts, State and Country picklists), tell the user exactly where to click and wait for them to confirm. Do not skip a step because it looks already done: check it.
 4. Deploy in two passes: `force-app`, then `force-app-late`, both from `package/`. A single pass fails on inactive flows.
-5. Report what was deployed and any errors. If a step fails, fix the cause, not the symptom, and say what you changed.
+5. After both passes, assign the permission set groups to the deploying admin user: `sf org assign permset --name FF_Wealth_Advisor --target-org <alias>` and `sf org assign permset --name FF_Client_Servicing --target-org <alias>`. Without them the admin cannot see the FF fields on the record pages. Ask the user before assigning them to anyone else.
+6. Run `sf apex run --file scripts/post-deploy/01_party_role_relationships.apex --target-org <alias>` from `package/` to load the Party Role Relationships. It is safe to re-run.
+7. Tell the user the Asset Type and Liability Type picklist values must be added by hand (list in `package/README.md`); they cannot be deployed.
+8. Report what was deployed and any errors. If a step fails, fix the cause, not the symptom, and say what you changed.
 
 ## Ask before
 

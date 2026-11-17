@@ -66,4 +66,29 @@
         <default>false</default>
         <label>ISA</label>
     </standardValue>
+    <standardValue>
+        <fullName>Discretionary mandate</fullName>
+        <default>false</default>
+        <label>Discretionary mandate</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Advisory mandate</fullName>
+        <default>false</default>
+        <label>Advisory mandate</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Investment Controlling</fullName>
+        <default>false</default>
+        <label>Investment Controlling</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Asset Management mandate</fullName>
+        <default>false</default>
+        <label>Asset Management mandate</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Family Office services</fullName>
+        <default>false</default>
+        <label>Family Office services</label>
+    </standardValue>
 </StandardValueSet>

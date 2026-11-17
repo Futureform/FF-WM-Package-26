@@ -21,4 +21,9 @@
         <default>false</default>
         <label>On Hold</label>
     </standardValue>
+    <standardValue>
+        <fullName>Pending</fullName>
+        <default>false</default>
+        <label>Pending</label>
+    </standardValue>
 </StandardValueSet>

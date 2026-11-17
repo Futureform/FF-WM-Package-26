@@ -90,6 +90,20 @@ Five flows deploy as Draft by design (`FF_Household_Naming_ACR_Change`, `FF_Hous
 
 This package now ships its own permission sets, permission set groups and profile (`FF Wealth Standard User`), so the record-type, layout and field-access assignment that the Deployment Guide previously called out as a manual, provisional step is largely covered by assigning users to the shipped permission set groups (`FF_Client_Servicing`, `FF_Wealth_Advisor`) rather than hand-configuring System Admin access. Remaining manual steps:
 
+- **Assign the two permission set groups to the people who will use the app, including the deploying admin.** Without them, users do not see the FF fields on the record pages (the System Administrator profile has no access to them). This cannot be deployed as metadata:
+
+  ```
+  sf org assign permset --name FF_Wealth_Advisor --target-org <alias>
+  sf org assign permset --name FF_Client_Servicing --target-org <alias>
+  ```
+- **Load the Party Role Relationships** (the 32 role definitions such as Husband-Wife-CCR). They are data, not metadata, so the deploy does not bring them. Safe to re-run:
+
+  ```
+  cd package
+  sf apex run --file scripts/post-deploy/01_party_role_relationships.apex --target-org <alias>
+  ```
+- **Add the Asset Type and Liability Type picklist values by hand** (Setup > Object Manager > Party Financial Asset / Party Financial Liability > Fields > Type). Salesforce does not let these be deployed as metadata. Asset Type: Real Estate, Vehicle, Equipment, Collection, Gold, Jewellery, Cash, Other. Liability Type: Mortgage, Credit Card, Bank Overdraft, Vehicle Finance, Other Loans, Life Assurance, Private Health Care, Other.
+
 - Activate Action Plan Templates
 - Manually populate picklist-driven type values used by the templates where no default ships with the org: Goal Type, Asset Type, Financial Goal Type, Assessment Type, Financial Account Type, Financial Account Transaction Type, Financial Account Fee Type, Financial Account Frequency
 - Import Providers and Regulators reference data

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Credit</fullName>
+        <default>false</default>
+        <label>Credit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Debit</fullName>
+        <default>false</default>
+        <label>Debit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Dividend</fullName>
+        <default>false</default>
+        <label>Dividend</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Subscription</fullName>
+        <default>false</default>
+        <label>Subscription</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Capital Call</fullName>
+        <default>false</default>
+        <label>Capital Call</label>
+    </standardValue>
+</StandardValueSet>

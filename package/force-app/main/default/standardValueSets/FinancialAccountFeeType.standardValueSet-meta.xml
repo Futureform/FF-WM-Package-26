@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Stop Payment Fee</fullName>
+        <default>true</default>
+        <label>Stop Payment Fee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>New Cheque Book Fee</fullName>
+        <default>false</default>
+        <label>New Cheque Book Fee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Duplicate Card Fee</fullName>
+        <default>false</default>
+        <label>Duplicate Card Fee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Initial advice</fullName>
+        <default>false</default>
+        <label>Initial advice</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ongoing advice</fullName>
+        <default>false</default>
+        <label>Ongoing advice</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Indemnity commission</fullName>
+        <default>false</default>
+        <label>Indemnity commission</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ad hoc advice</fullName>
+        <default>false</default>
+        <label>Ad hoc advice</label>
+    </standardValue>
+</StandardValueSet>
