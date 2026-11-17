@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Total Balance</fullName>
+        <default>false</default>
+        <label>Total Balance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Current Posted Balance</fullName>
+        <default>false</default>
+        <label>Current Posted Balance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Principal Balance</fullName>
+        <default>false</default>
+        <label>Principal Balance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lease Balance</fullName>
+        <default>false</default>
+        <label>Lease Balance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Available Credit</fullName>
+        <default>false</default>
+        <label>Available Credit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Available Balance</fullName>
+        <default>false</default>
+        <label>Available Balance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Pending Withdrawal</fullName>
+        <default>false</default>
+        <label>Pending Withdrawal</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Pending Deposit</fullName>
+        <default>false</default>
+        <label>Pending Deposit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Minimum Payment</fullName>
+        <default>false</default>
+        <label>Minimum Payment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Balance Last Statement</fullName>
+        <default>false</default>
+        <label>Balance Last Statement</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Cash Balance</fullName>
+        <default>false</default>
+        <label>Cash Balance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Valuation</fullName>
+        <default>false</default>
+        <label>Valuation</label>
+    </standardValue>
+</StandardValueSet>

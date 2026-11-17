@@ -1267,9 +1267,6 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>ApplicationForm.FF_Complete_Review_Form</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>New</value>
                         </valueListItems>
                     </valueList>
@@ -1354,16 +1351,6 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-06a5b601-d7e8-4d38-9eec-ada690e91b1d</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>ffAiFactFind</componentName>
-                <identifier>c_ffAiFactFind</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-f2f7c9e0-9b7b-4caf-89e9-1cbf7bafd4e1</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -1718,20 +1705,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab5</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-f2f7c9e0-9b7b-4caf-89e9-1cbf7bafd4e1</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Fact Find</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab7</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

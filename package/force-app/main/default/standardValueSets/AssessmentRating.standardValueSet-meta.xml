@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>High</fullName>
+        <default>false</default>
+        <label>High</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Medium</fullName>
+        <default>false</default>
+        <label>Medium</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Low</fullName>
+        <default>false</default>
+        <label>Low</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Cautious</fullName>
+        <default>false</default>
+        <label>Cautious</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Moderately Cautious</fullName>
+        <default>false</default>
+        <label>Moderately Cautious</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Balanced</fullName>
+        <default>false</default>
+        <label>Balanced</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Moderately Adventurous</fullName>
+        <default>false</default>
+        <label>Moderately Adventurous</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Adventurous</fullName>
+        <default>false</default>
+        <label>Adventurous</label>
+    </standardValue>
+</StandardValueSet>

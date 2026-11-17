@@ -3,6 +3,9 @@
     {
       "path": "force-app",
       "default": true
+    },
+    {
+      "path": "force-app-late"
     }
   ],
   "name": "ff-wm-core-package",

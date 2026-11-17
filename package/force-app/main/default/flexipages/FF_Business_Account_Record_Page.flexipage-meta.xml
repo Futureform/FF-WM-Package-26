@@ -640,9 +640,6 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>ApplicationForm.FF_Complete_Review_Form</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>New</value>
                         </valueListItems>
                     </valueList>

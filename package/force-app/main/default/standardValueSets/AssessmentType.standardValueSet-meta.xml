@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Risk Profile</fullName>
+        <default>false</default>
+        <label>Risk Profile</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Financial Assessment</fullName>
+        <default>false</default>
+        <label>Financial Assessment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fact Find</fullName>
+        <default>false</default>
+        <label>Fact Find</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ISA Application</fullName>
+        <default>false</default>
+        <label>ISA Application</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ISA Risk</fullName>
+        <default>false</default>
+        <label>ISA Risk</label>
+    </standardValue>
+    <standardValue>
+        <fullName>EIS Application</fullName>
+        <default>false</default>
+        <label>EIS Application</label>
+    </standardValue>
+</StandardValueSet>

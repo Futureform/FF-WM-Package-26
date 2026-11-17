@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Business</fullName>
+    <active>true</active>
+    <description>Placeholder business record type. Person Accounts cannot be enabled until a business Account record type exists. The main package deploy replaces this with the full FF Business definition.</description>
+    <label>FF Business</label>
+</RecordType>

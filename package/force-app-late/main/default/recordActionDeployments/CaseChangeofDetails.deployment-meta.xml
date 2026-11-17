@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordActionDeployment xmlns="http://soap.sforce.com/2006/04/metadata">
+    <componentName>ActionLauncher</componentName>
+    <deploymentContexts>
+        <entityName>Case</entityName>
+    </deploymentContexts>
+    <hasComponents>false</hasComponents>
+    <hasGuidedActions>true</hasGuidedActions>
+    <hasOmniscripts>false</hasOmniscripts>
+    <hasRecommendations>false</hasRecommendations>
+    <masterLabel>Case - Change of Details</masterLabel>
+    <selectableItems>
+        <action>FF_Case_Update_Address</action>
+        <frequentActionSequenceNbr>1</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>Flow</type>
+    </selectableItems>
+    <selectableItems>
+        <action>FF_Case_Update_Client_Name</action>
+        <frequentActionSequenceNbr>0</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>Flow</type>
+    </selectableItems>
+    <selectableItems>
+        <action>FF_Update_Contact_Details</action>
+        <frequentActionSequenceNbr>4</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>Flow</type>
+    </selectableItems>
+    <selectableItems>
+        <action>FF_Case_Update_Date_Of_Birth</action>
+        <frequentActionSequenceNbr>2</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>Flow</type>
+    </selectableItems>
+    <selectableItems>
+        <action>FF_Case_Update_Marital_Status</action>
+        <frequentActionSequenceNbr>3</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>Flow</type>
+    </selectableItems>
+</RecordActionDeployment>
