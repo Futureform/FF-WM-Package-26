@@ -385,6 +385,21 @@
                 <default>false</default>
                 <label>State Pension Forecast</label>
             </value>
+            <value>
+                <fullName>Ongoing advice</fullName>
+                <default>false</default>
+                <label>Ongoing advice</label>
+            </value>
+            <value>
+                <fullName>Fixed advice</fullName>
+                <default>false</default>
+                <label>Fixed advice</label>
+            </value>
+            <value>
+                <fullName>Ad hoc advice</fullName>
+                <default>false</default>
+                <label>Ad hoc advice</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>Bank Account</controllingFieldValue>
@@ -685,6 +700,18 @@
         <valueSettings>
             <controllingFieldValue>Protection</controllingFieldValue>
             <valueName>Funeral Plans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advice</controllingFieldValue>
+            <valueName>Ongoing advice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advice</controllingFieldValue>
+            <valueName>Fixed advice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advice</controllingFieldValue>
+            <valueName>Ad hoc advice</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>
