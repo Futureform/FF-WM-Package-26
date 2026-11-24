@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>FF Lead Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Our goals are now to:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;make contact with the person&lt;/li&gt;&lt;li&gt;confirm there is mutual interest in moving forwards&lt;/li&gt;&lt;li&gt;book the first meeting to get more details&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Assigned</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;Learn about and contact your new lead quickly.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Respond to your lead within five minutes to increase your chances of being able to successfully meet the customer&amp;#39;s need.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Look at the customer profile to familiarise yourself with them as a individual before contacting them.&lt;/li&gt;&lt;li&gt;Understand what we already know about their goals, life stage, financial situation.&lt;/li&gt;&lt;li&gt;Check their recent activity to see if they have been browsing our website and what topics they have spent the most time looking at.&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;This means that there is no immediate interest in moving forwards and so we&amp;#39;ll leave them at Nurturing stage and drip feed them marketing material.&lt;/p&gt;</info>
+        <picklistValueName>Nurturing</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>FF_Lead</recordTypeName>
+</PathAssistant>

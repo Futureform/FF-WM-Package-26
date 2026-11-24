@@ -27,7 +27,7 @@ See [docs/extract-candidates.md](../docs/extract-candidates.md) for the full tie
 
 Run these in order against the target org **before** deploying `force-app/`. Verified on 2026-11-15 against a fresh Developer Edition org with Financial Services Cloud licences. Full log with dates, methods and findings: [../docs/predeploy-log.md](../docs/predeploy-log.md).
 
-**Step A: deploy the settings that can be deployed as metadata.** This covers 10 of the 16 steps below and the placeholder `FF_Business` Account record type that Person Accounts needs.
+**Step A: deploy the settings that can be deployed as metadata.** This covers 11 of the 17 steps below, including Path and the placeholder `FF_Business` Account record type that Person Accounts needs.
 
 ```
 cd pre-deploy
@@ -72,6 +72,7 @@ sf org assign permset --name DigitalLending --target-org <alias>
 | 14 | Data Pipeline | Step C |
 | 15 | Account field history tracking (not in the original guide; `FF_Communication_Preferences__c` and `FF_Marital_Status__c` need it) | Step A (`Settings:Account`) |
 | 16 | Record Rollups (not in the original guide; Record Aggregation Definitions need it) | Step A (`Settings:Industries`) |
+| 17 | Path (Setup > Path Settings). Org-wide, not per object. Without it the packaged paths and the Path component do not work, and the record pages show the standard Stage path instead (not in the original guide) | Step A (`Settings:PathAssistant`) |
 | 17 | Digital Lending licence and permission set assigned to the deploying user (not in the original guide) | Step B2 |
 
 ## Deploy
