@@ -382,6 +382,18 @@
             <fullName>Whole of Life</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Ad hoc advice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed advice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ongoing advice</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>FF_Type__c</picklist>
@@ -403,6 +415,10 @@
         </values>
         <values>
             <fullName>Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advice</fullName>
             <default>false</default>
         </values>
     </picklistValues>
