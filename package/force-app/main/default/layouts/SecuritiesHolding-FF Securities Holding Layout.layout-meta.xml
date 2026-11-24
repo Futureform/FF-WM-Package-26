@@ -40,7 +40,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>FF_Historic_Valuation__c</field>
+                <field>FF_Latest_Valuation__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -155,8 +155,11 @@
         <relatedList>RelatedActivityList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Historic_Valuation__c.FF_Securities_Holding__c</relatedList>
+        <fields>BalanceAsOfDate</fields>
+        <fields>Amount</fields>
+        <fields>FF_Price__c</fields>
+        <fields>FF_Shares__c</fields>
+        <relatedList>FinancialAccountBalance.FF_Securities_Holding__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>

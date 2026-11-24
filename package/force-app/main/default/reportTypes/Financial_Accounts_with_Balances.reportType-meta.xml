@@ -245,6 +245,21 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RecordType</field>
+            <table>FinancialAccount.FinancialAccountBalance</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FF_Price__c</field>
+            <table>FinancialAccount.FinancialAccountBalance</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FF_Shares__c</field>
+            <table>FinancialAccount.FinancialAccountBalance</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Amount</field>
             <table>FinancialAccount.FinancialAccountBalance</table>
         </columns>

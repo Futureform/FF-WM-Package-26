@@ -38,6 +38,15 @@
         <field>FinancialAccount.FinancialAccountBalance$Name</field>
     </columns>
     <description>Used on a Financial Account record chart component to visualise balances over time.</description>
+    <filter>
+        <criteriaItems>
+            <column>FinancialAccount.FinancialAccountBalance$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>FinancialAccountBalance.FF_Balance</value>
+        </criteriaItems>
+    </filter>
     <format>Summary</format>
     <groupingsDown>
         <field>FinancialAccount.FinancialAccountBalance$CreatedDate</field>
