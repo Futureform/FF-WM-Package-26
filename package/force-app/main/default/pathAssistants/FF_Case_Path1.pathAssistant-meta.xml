@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Case</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>FF Case Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;The case has been fully resolved, and the client has been informed.&lt;/li&gt;&lt;li&gt;Confirm that all follow-ups have been completed.&lt;/li&gt;&lt;li&gt;Capture any relevant learnings or feedback for future process improvements.&lt;/li&gt;&lt;li&gt;Ensure proper documentation for compliance and audit purposes.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Closed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;The case requires urgent attention or involvement from senior advisors, compliance, or other teams.&lt;/li&gt;&lt;li&gt;Clearly document the reason for escalation and actions taken so far.&lt;/li&gt;&lt;li&gt;Maintain frequent communication with all stakeholders for a swift resolution.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Escalated</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;The case has been created and requires initial assessment.&lt;/li&gt;&lt;li&gt;Ensure all relevant details (client information, case type, priority) are captured.&lt;/li&gt;&lt;li&gt;Assign ownership promptly to avoid delays.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;The case is actively being handled by the assigned advisor or support team.&lt;/li&gt;&lt;li&gt;Keep case notes updated with actions taken and client interactions.&lt;/li&gt;&lt;li&gt;If additional information is needed from the client, request it promptly.&lt;/li&gt;&lt;li&gt;Aim to resolve within the expected SLA based on case priority.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Working</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Change_Of_Details</recordTypeName>
+</PathAssistant>

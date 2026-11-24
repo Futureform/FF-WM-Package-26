@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <description>Daily. Chases silent clients, flags Non-Response, then escalates to the Compliance queue.</description>
+    <decisions>
+        <name>Route</name><label>Route</label><locationX>0</locationX><locationY>0</locationY>
+        <defaultConnectorLabel>Nothing to do</defaultConnectorLabel>
+        <rules>
+            <name>Chase</name><conditionLogic>and</conditionLogic>
+            <conditions><leftValueReference>$Record.FF_Review_Status__c</leftValueReference><operator>EqualTo</operator><rightValue><stringValue>Contacted</stringValue></rightValue></conditions>
+            <conditions><leftValueReference>$Record.FF_Review_Attempts__c</leftValueReference><operator>LessThan</operator><rightValue><elementReference>Get_Setting.FF_Max_Attempts__c</elementReference></rightValue></conditions>
+            <conditions><leftValueReference>$Record.FF_Last_Contact_Logged__c</leftValueReference><operator>EqualTo</operator><rightValue><elementReference>ChaseDate</elementReference></rightValue></conditions>
+            <connector><targetReference>Chase_Task</targetReference></connector>
+            <label>Chase</label>
+        </rules>
+        <rules>
+            <name>To_Non_Response</name><conditionLogic>and</conditionLogic>
+            <conditions><leftValueReference>$Record.FF_Review_Status__c</leftValueReference><operator>EqualTo</operator><rightValue><stringValue>Contacted</stringValue></rightValue></conditions>
+            <conditions><leftValueReference>$Record.FF_Review_Attempts__c</leftValueReference><operator>GreaterThanOrEqualTo</operator><rightValue><elementReference>Get_Setting.FF_Max_Attempts__c</elementReference></rightValue></conditions>
+            <connector><targetReference>Set_Non_Response</targetReference></connector>
+            <label>To Non-Response</label>
+        </rules>
+        <rules>
+            <name>To_Escalated</name><conditionLogic>and</conditionLogic>
+            <conditions><leftValueReference>$Record.FF_Review_Status__c</leftValueReference><operator>EqualTo</operator><rightValue><stringValue>Non-Response</stringValue></rightValue></conditions>
+            <conditions><leftValueReference>$Record.FF_Last_Contact_Logged__c</leftValueReference><operator>LessThanOrEqualTo</operator><rightValue><elementReference>EscalateDate</elementReference></rightValue></conditions>
+            <connector><targetReference>Get_Queue</targetReference></connector>
+            <label>To Escalated</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>ChaseDate</name><dataType>Date</dataType><expression>TODAY() - {!Get_Setting.FF_Chase_Days__c}</expression>
+    </formulas>
+    <formulas>
+        <name>EscalateDate</name><dataType>Date</dataType><expression>TODAY() - {!Get_Setting.FF_Escalate_Days__c}</expression>
+    </formulas>
+    <formulas>
+        <name>TaskDue</name><dataType>Date</dataType><expression>TODAY() + 2</expression>
+    </formulas>
+    <label>FF Review Chase Escalate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Chase_Task</name><label>Chase Task</label><locationX>0</locationX><locationY>0</locationY>
+        <inputAssignments><field>ActivityDate</field><value><elementReference>TaskDue</elementReference></value></inputAssignments>
+        <inputAssignments><field>OwnerId</field><value><elementReference>$Record.OwnerId</elementReference></value></inputAssignments>
+        <inputAssignments><field>Subject</field><value><stringValue>Follow up client on periodic review</stringValue></value></inputAssignments>
+        <inputAssignments><field>WhatId</field><value><elementReference>$Record.Id</elementReference></value></inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Non_Response_Task</name><label>Non-Response Task</label><locationX>0</locationX><locationY>0</locationY>
+        <inputAssignments><field>ActivityDate</field><value><elementReference>TaskDue</elementReference></value></inputAssignments>
+        <inputAssignments><field>OwnerId</field><value><elementReference>$Record.OwnerId</elementReference></value></inputAssignments>
+        <inputAssignments><field>Subject</field><value><stringValue>Periodic review: no response from client</stringValue></value></inputAssignments>
+        <inputAssignments><field>WhatId</field><value><elementReference>$Record.Id</elementReference></value></inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Escalation_Task</name><label>Escalation Task</label><locationX>0</locationX><locationY>0</locationY>
+        <connector><targetReference>Set_Escalated</targetReference></connector>
+        <inputAssignments><field>ActivityDate</field><value><elementReference>TaskDue</elementReference></value></inputAssignments>
+        <inputAssignments><field>OwnerId</field><value><elementReference>$Record.OwnerId</elementReference></value></inputAssignments>
+        <inputAssignments><field>Subject</field><value><stringValue>Periodic review escalated to Compliance</stringValue></value></inputAssignments>
+        <inputAssignments><field>WhatId</field><value><elementReference>$Record.Id</elementReference></value></inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Setting</name><label>Get Setting</label><locationX>0</locationX><locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector><targetReference>Route</targetReference></connector>
+        <filterLogic>and</filterLogic>
+        <filters><field>DeveloperName</field><operator>EqualTo</operator><value><stringValue>Default</stringValue></value></filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>FF_Review_Setting__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Queue</name><label>Get Compliance Queue</label><locationX>0</locationX><locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector><targetReference>Escalation_Task</targetReference></connector>
+        <filterLogic>and</filterLogic>
+        <filters><field>DeveloperName</field><operator>EqualTo</operator><value><stringValue>FF_Compliance_Queue</stringValue></value></filters>
+        <filters><field>Type</field><operator>EqualTo</operator><value><stringValue>Queue</stringValue></value></filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Set_Non_Response</name><label>Set Non-Response</label><locationX>0</locationX><locationY>0</locationY>
+        <connector><targetReference>Non_Response_Task</targetReference></connector>
+        <inputAssignments><field>FF_Review_Status__c</field><value><stringValue>Non-Response</stringValue></value></inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Escalated</name><label>Set Escalated</label><locationX>0</locationX><locationY>0</locationY>
+        <inputAssignments><field>FF_Escalation_Reason__c</field><value><stringValue>No response from client after the agreed attempts and days.</stringValue></value></inputAssignments>
+        <inputAssignments><field>FF_Review_Status__c</field><value><stringValue>Escalated</stringValue></value></inputAssignments>
+        <inputAssignments><field>OwnerId</field><value><elementReference>Get_Queue.Id</elementReference></value></inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX><locationY>0</locationY>
+        <connector><targetReference>Get_Setting</targetReference></connector>
+        <filterLogic>and</filterLogic>
+        <filters><field>FF_Review_Status__c</field><operator>IsNull</operator><value><booleanValue>false</booleanValue></value></filters>
+        <object>ApplicationForm</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2026-11-25</startDate>
+            <startTime>07:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

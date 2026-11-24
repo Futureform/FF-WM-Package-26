@@ -8,7 +8,7 @@ Validated 2026-11-15 by real deploy to a fresh Developer Edition org after the p
 
 **Included:**
 - 29 objects (Account, AccountContactRelation, Applicant, ApplicationForm, ApplicationFormProduct, Campaign, Case, Contact, DocumentChecklistItem, Event, FF_Application_Form_Product_Participant__c, FF_Client_Vulnerability__c, FinancialAccount, FinancialAccountBalance, FinancialAccountFee, FinancialAccountParty, FinancialAccountTransaction, FinancialGoal, Interaction, InteractionSummary, Lead, Opportunity, PartyFinancialAsset, PartyFinancialLiability, PartyRelationshipGroup, Product2, SecuritiesHolding, Task, User)
-- 21 flows, 21 permission sets, 2 permission set groups, the `FF Wealth Standard User` profile
+- 26 flows, 22 permission sets, 2 permission set groups, the `FF Wealth Standard User` profile
 - 30 FlexiPages, 70 layouts, the `FF_Wealth_Management` Lightning app, 1 tab, 4 quick actions
 - 3 queues, assignment rules, document types, relationship graph definitions, record aggregation definitions, report types/reports, standard value sets (customised ones only), static resources, content assets, 2 workflows
 
@@ -16,6 +16,7 @@ Validated 2026-11-15 by real deploy to a fresh Developer Edition org after the p
 - The AI Fact Find agent in full — Apex, LWC, flows, Genie plugins/prompt templates, permission sets (lives separately in `ff-wm-factfind-agent`)
 - `FF_Application__c` — assessed against the simplicity check and excluded in favour of standard `ApplicationForm` with the `FF Application` record type, which is lighter and sufficient. Its object, tab, layout, FlexiPage, dedicated onboarding-approvers queue and application overrides are all excluded with it; `FF_Application_Form_Product_Participant__c` is retained (no standard equivalent — its lookups target `Applicant` and `ApplicationFormProduct`, not `FF_Application__c`). See [docs/capabilities/03-applications-and-onboarding.md](../docs/capabilities/03-applications-and-onboarding.md).
 - `FF_Review_Outcome_Builder` flow and its quick action, `FF_ReviewWording__mdt` and its records, `FF_Review_Flow_Access` permission set
+- Four dev26 paths: `FF_Application_Path`, `FF_Provider_Statement_Path` and `Migration_Path` (their custom objects are not in the template) and `FF_Application_Form_Product_Path` (needs Stage values the template does not carry). The other dev26 paths ship, plus the Periodic Review path
 - `PartyRoleRelation`, `BusinessMilestone`, `AccountFinancialSummary`, `CampaignMember`, `OpportunityContactRole`, `RecordAggregationResult`
 - Salesforce default sample-org fields (`CustomerPriority__c`, `SLA__c`, etc.) and cross-industry demo fields (Real Estate/PE/Life Sciences fields on Opportunity) — stripped from Account, Opportunity, Lead, Case, Contact
 - Generic org boilerplate: duplicate rules, empty sharing rules, default roles, default remote site settings
@@ -27,7 +28,7 @@ See [docs/extract-candidates.md](../docs/extract-candidates.md) for the full tie
 
 Run these in order against the target org **before** deploying `force-app/`. Verified on 2026-11-15 against a fresh Developer Edition org with Financial Services Cloud licences. Full log with dates, methods and findings: [../docs/predeploy-log.md](../docs/predeploy-log.md).
 
-**Step A: deploy the settings that can be deployed as metadata.** This covers 10 of the 16 steps below and the placeholder `FF_Business` Account record type that Person Accounts needs.
+**Step A: deploy the settings that can be deployed as metadata.** This covers 11 of the 17 steps below, including Path and the placeholder `FF_Business` Account record type that Person Accounts needs.
 
 ```
 cd pre-deploy
@@ -72,6 +73,7 @@ sf org assign permset --name DigitalLending --target-org <alias>
 | 14 | Data Pipeline | Step C |
 | 15 | Account field history tracking (not in the original guide; `FF_Communication_Preferences__c` and `FF_Marital_Status__c` need it) | Step A (`Settings:Account`) |
 | 16 | Record Rollups (not in the original guide; Record Aggregation Definitions need it) | Step A (`Settings:Industries`) |
+| 17 | Path (Setup > Path Settings). Org-wide, not per object. Without it the packaged paths and the Path component do not work, and the record pages show the standard Stage path instead (not in the original guide) | Step A (`Settings:PathAssistant`) |
 | 17 | Digital Lending licence and permission set assigned to the deploying user (not in the original guide) | Step B2 |
 
 ## Deploy
@@ -96,6 +98,7 @@ This package now ships its own permission sets, permission set groups and profil
   sf org assign permset --name FF_Wealth_Advisor --target-org <alias>
   sf org assign permset --name FF_Client_Servicing --target-org <alias>
   ```
+- **Set up periodic reviews.** The template ships the FF Periodic Review record type, five flows, the Upcoming reviews list and the FF Overdue Reviews report. For each client, set Review Frequency and the first Next Review Date on the Account; the daily flow creates the review from there. Change the thresholds (window, attempts, chase and escalate days) in Custom Metadata > FF Review Setting > Default. The review is owned by the Account owner, and escalated reviews move to the Compliance Queue. The two scheduled flows run daily at 06:00 and 07:00 UTC.
 - **Load the Party Role Relationships** (the 32 role definitions such as Husband-Wife-CCR). They are data, not metadata, so the deploy does not bring them. Safe to re-run:
 
   ```

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Applicant</entityName>
+    <fieldName>Stage</fieldName>
+    <masterLabel>FF Applicant Onboarding Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;All required checks have passed. The product can now be opened.&lt;/p&gt;</info>
+        <picklistValueName>Approved</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Identity and address checks are outstanding. The applicant cannot progress until every required document checklist item is Accepted.&lt;/p&gt;</info>
+        <picklistValueName>In Review</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

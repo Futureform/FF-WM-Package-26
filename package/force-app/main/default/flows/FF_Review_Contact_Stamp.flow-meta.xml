@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <description>Stamps Last Contact Logged when the adviser logs an attempt or sets Contacted.</description>
+    <label>FF Review Contact Stamp</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Stamp</name><label>Stamp</label><locationX>0</locationX><locationY>0</locationY>
+        <inputAssignments><field>FF_Last_Contact_Logged__c</field><value><elementReference>$Flow.CurrentDate</elementReference></value></inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX><locationY>0</locationY>
+        <connector><targetReference>Stamp</targetReference></connector>
+        <filterFormula>AND(NOT(ISBLANK(TEXT({!$Record.FF_Review_Status__c}))), OR(ISCHANGED({!$Record.FF_Review_Attempts__c}), AND(ISCHANGED({!$Record.FF_Review_Status__c}), TEXT({!$Record.FF_Review_Status__c}) = 'Contacted')))</filterFormula>
+        <object>ApplicationForm</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

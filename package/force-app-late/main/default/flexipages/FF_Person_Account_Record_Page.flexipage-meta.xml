@@ -870,6 +870,54 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.FF_Next_Review_Date__c</fieldItem>
+                <identifier>RecordFF_Next_Review_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.FF_Last_Review_Date__c</fieldItem>
+                <identifier>RecordFF_Last_Review_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.FF_Review_Frequency__c</fieldItem>
+                <identifier>RecordFF_Review_Frequency__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-7f3a1c52-8b4e-4d6a-9c2f-1e5d0a4b7c11</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-7f3a1c52-8b4e-4d6a-9c2f-1e5d0a4b7c11</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column_ffreview</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-2d9e4b6a-3c51-47f8-a0b1-6e8c7d5f9a32</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.FF_Internal_Referrer__c</fieldItem>
                 <identifier>RecordFF_Internal_Referrer__cField</identifier>
             </fieldInstance>
@@ -1200,6 +1248,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection9</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-2d9e4b6a-3c51-47f8-a0b1-6e8c7d5f9a32</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Periodic Review</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection_ffreview</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

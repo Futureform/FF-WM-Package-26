@@ -99,3 +99,7 @@ Not a clean-reset proof: this org already had Discovery Framework and Know Your 
 - Settings metadata used for steps 1-3, 5-8, 11-13 lives in the scratchpad project `pre/enable` and deployed 5/5 components (Account, Opportunity, CustomAddressField, Name, Industries).
 - Org licences already present: FSC Comprehensive/Sales/Service PSLs, Action Plans PSL, Financial Services Cloud Extension.
 - Person Accounts cannot be turned off once enabled.
+
+## Path (found 2026-11-24)
+
+Path (Setup > Path Settings) is an org-wide setting and was never part of the pre-deploy steps. With it off, a deployed path does nothing and the Path component falls back to the standard Stage path. Added `pre-deploy/force-app/main/default/settings/PathAssistant.settings-meta.xml` (`pathAssistantEnabled` true) to Step A and README row 17. Dry-run validated against wmtemplate-new, where Path had been enabled by hand. Not yet run on a fresh org where Path is off. The package also ships no paths other than the periodic review path (WMT2-807); the dev26 paths are listed in the WMT2-807 follow-up.

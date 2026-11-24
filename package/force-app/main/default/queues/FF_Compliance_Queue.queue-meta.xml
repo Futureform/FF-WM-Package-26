@@ -4,6 +4,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>Compliance Queue</name>
     <queueSobject>
+        <sobjectType>ApplicationForm</sobjectType>
+    </queueSobject>
+    <queueSobject>
         <sobjectType>Case</sobjectType>
     </queueSobject>
 </Queue>

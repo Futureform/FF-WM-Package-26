@@ -52,6 +52,10 @@
         <layout>FinancialAccountBalance-FF Balance - Valuation Layout</layout>
         <recordType>FinancialAccountBalance.FF_Valuation</recordType>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>ApplicationForm-FF Periodic Review Layout</layout>
+        <recordType>ApplicationForm.FF_Periodic_Review</recordType>
+    </layoutAssignments>
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>FinancialAccountBalance.FF_Balance</recordType>

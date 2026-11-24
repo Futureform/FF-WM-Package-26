@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <description>When an Event is linked to a periodic review, sets the review to Booked and fills Review Meeting Date.</description>
+    <decisions>
+        <name>Review_Found</name><label>Review Found</label><locationX>0</locationX><locationY>0</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions><leftValueReference>Get_Review</leftValueReference><operator>IsNull</operator><rightValue><booleanValue>false</booleanValue></rightValue></conditions>
+            <connector><targetReference>Set_Booked</targetReference></connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>MeetingDate</name><dataType>Date</dataType><expression>DATEVALUE({!$Record.StartDateTime})</expression>
+    </formulas>
+    <label>FF Review Meeting Booked</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Review</name><label>Get Review</label><locationX>0</locationX><locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector><targetReference>Review_Found</targetReference></connector>
+        <filterLogic>and</filterLogic>
+        <filters><field>Id</field><operator>EqualTo</operator><value><elementReference>$Record.WhatId</elementReference></value></filters>
+        <filters><field>FF_Review_Status__c</field><operator>IsNull</operator><value><booleanValue>false</booleanValue></value></filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ApplicationForm</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Set_Booked</name><label>Set Booked</label><locationX>0</locationX><locationY>0</locationY>
+        <inputAssignments><field>FF_Review_Status__c</field><value><stringValue>Booked</stringValue></value></inputAssignments>
+        <inputAssignments><field>FF_Review_Meeting_Date__c</field><value><elementReference>MeetingDate</elementReference></value></inputAssignments>
+        <filterLogic>and</filterLogic>
+        <filters><field>Id</field><operator>EqualTo</operator><value><elementReference>Get_Review.Id</elementReference></value></filters>
+        <object>ApplicationForm</object>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX><locationY>0</locationY>
+        <connector><targetReference>Get_Review</targetReference></connector>
+        <filterFormula>NOT(ISBLANK({!$Record.WhatId}))</filterFormula>
+        <object>Event</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

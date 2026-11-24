@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>ApplicationForm</baseObject>
+    <category>accounts</category>
+    <deployed>true</deployed>
+    <description>Application forms with their review fields. Used for the periodic review reports.</description>
+    <label>FF Application Forms</label>
+    <sections>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>ApplicationForm</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Account</field>
+            <table>ApplicationForm</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>DueDate</field>
+            <table>ApplicationForm</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>FF_Review_Status__c</field>
+            <table>ApplicationForm</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>FF_Review_Attempts__c</field>
+            <table>ApplicationForm</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>FF_Last_Contact_Logged__c</field>
+            <table>ApplicationForm</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>FF_Review_Meeting_Date__c</field>
+            <table>ApplicationForm</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>FF_Escalation_Reason__c</field>
+            <table>ApplicationForm</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>RecordType</field>
+            <table>ApplicationForm</table>
+        </columns>
+        <masterLabel>Application Form</masterLabel>
+    </sections>
+</ReportType>
