@@ -53,6 +53,23 @@
         <inputAssignments><field>WhatId</field><value><elementReference>$Record.Id</elementReference></value></inputAssignments>
         <object>Task</object>
     </recordCreates>
+    <recordCreates>
+        <name>Non_Response_Task</name><label>Non-Response Task</label><locationX>0</locationX><locationY>0</locationY>
+        <inputAssignments><field>ActivityDate</field><value><elementReference>TaskDue</elementReference></value></inputAssignments>
+        <inputAssignments><field>OwnerId</field><value><elementReference>$Record.OwnerId</elementReference></value></inputAssignments>
+        <inputAssignments><field>Subject</field><value><stringValue>Periodic review: no response from client</stringValue></value></inputAssignments>
+        <inputAssignments><field>WhatId</field><value><elementReference>$Record.Id</elementReference></value></inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Escalation_Task</name><label>Escalation Task</label><locationX>0</locationX><locationY>0</locationY>
+        <connector><targetReference>Set_Escalated</targetReference></connector>
+        <inputAssignments><field>ActivityDate</field><value><elementReference>TaskDue</elementReference></value></inputAssignments>
+        <inputAssignments><field>OwnerId</field><value><elementReference>$Record.OwnerId</elementReference></value></inputAssignments>
+        <inputAssignments><field>Subject</field><value><stringValue>Periodic review escalated to Compliance</stringValue></value></inputAssignments>
+        <inputAssignments><field>WhatId</field><value><elementReference>$Record.Id</elementReference></value></inputAssignments>
+        <object>Task</object>
+    </recordCreates>
     <recordLookups>
         <name>Get_Setting</name><label>Get Setting</label><locationX>0</locationX><locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -66,7 +83,7 @@
     <recordLookups>
         <name>Get_Queue</name><label>Get Compliance Queue</label><locationX>0</locationX><locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector><targetReference>Set_Escalated</targetReference></connector>
+        <connector><targetReference>Escalation_Task</targetReference></connector>
         <filterLogic>and</filterLogic>
         <filters><field>DeveloperName</field><operator>EqualTo</operator><value><stringValue>FF_Compliance_Queue</stringValue></value></filters>
         <filters><field>Type</field><operator>EqualTo</operator><value><stringValue>Queue</stringValue></value></filters>
@@ -76,6 +93,7 @@
     </recordLookups>
     <recordUpdates>
         <name>Set_Non_Response</name><label>Set Non-Response</label><locationX>0</locationX><locationY>0</locationY>
+        <connector><targetReference>Non_Response_Task</targetReference></connector>
         <inputAssignments><field>FF_Review_Status__c</field><value><stringValue>Non-Response</stringValue></value></inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
