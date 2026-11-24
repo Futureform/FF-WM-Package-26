@@ -8,7 +8,7 @@ Validated 2026-11-15 by real deploy to a fresh Developer Edition org after the p
 
 **Included:**
 - 29 objects (Account, AccountContactRelation, Applicant, ApplicationForm, ApplicationFormProduct, Campaign, Case, Contact, DocumentChecklistItem, Event, FF_Application_Form_Product_Participant__c, FF_Client_Vulnerability__c, FinancialAccount, FinancialAccountBalance, FinancialAccountFee, FinancialAccountParty, FinancialAccountTransaction, FinancialGoal, Interaction, InteractionSummary, Lead, Opportunity, PartyFinancialAsset, PartyFinancialLiability, PartyRelationshipGroup, Product2, SecuritiesHolding, Task, User)
-- 21 flows, 21 permission sets, 2 permission set groups, the `FF Wealth Standard User` profile
+- 26 flows, 22 permission sets, 2 permission set groups, the `FF Wealth Standard User` profile
 - 30 FlexiPages, 70 layouts, the `FF_Wealth_Management` Lightning app, 1 tab, 4 quick actions
 - 3 queues, assignment rules, document types, relationship graph definitions, record aggregation definitions, report types/reports, standard value sets (customised ones only), static resources, content assets, 2 workflows
 
@@ -96,6 +96,7 @@ This package now ships its own permission sets, permission set groups and profil
   sf org assign permset --name FF_Wealth_Advisor --target-org <alias>
   sf org assign permset --name FF_Client_Servicing --target-org <alias>
   ```
+- **Set up periodic reviews.** The template ships the FF Periodic Review record type, five flows, the Upcoming reviews list and the FF Overdue Reviews report. For each client, set Review Frequency and the first Next Review Date on the Account; the daily flow creates the review from there. Change the thresholds (window, attempts, chase and escalate days) in Custom Metadata > FF Review Setting > Default. The review is owned by the Account owner, and escalated reviews move to the Compliance Queue. The two scheduled flows run daily at 06:00 and 07:00 UTC.
 - **Load the Party Role Relationships** (the 32 role definitions such as Husband-Wife-CCR). They are data, not metadata, so the deploy does not bring them. Safe to re-run:
 
   ```

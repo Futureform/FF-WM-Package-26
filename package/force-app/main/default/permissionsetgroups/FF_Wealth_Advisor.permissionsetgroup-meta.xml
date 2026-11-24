@@ -8,6 +8,7 @@
     <permissionSets>FF_Business_Milestones</permissionSets>
     <permissionSets>FF_CampaignsPermissionSet</permissionSets>
     <permissionSets>FF_Cases_Read_Create</permissionSets>
+    <permissionSets>FF_Client_Reviews</permissionSets>
     <permissionSets>FF_Contacts</permissionSets>
     <permissionSets>FF_Financial_Data</permissionSets>
     <permissionSets>FF_Leads</permissionSets>
