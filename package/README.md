@@ -96,6 +96,7 @@ This package now ships its own permission sets, permission set groups and profil
   sf org assign permset --name FF_Wealth_Advisor --target-org <alias>
   sf org assign permset --name FF_Client_Servicing --target-org <alias>
   ```
+- **Give each advisor the licences the group needs before assigning it.** `FF_Wealth_Advisor` fails with "user license doesn't allow the permission: UseTemplatedApp" until the user holds these permission set licences: Financial Services Cloud Standard, Financial Services Cloud Extension, Industry Service Excellence, OmniStudio User, FSC Analytics Apps, Industries Sales Excellence and Analytics Platform. The `FF Wealth Standard User` profile opens the FF Wealth Management app by default.
 - **Load the Party Role Relationships** (the 32 role definitions such as Husband-Wife-CCR). They are data, not metadata, so the deploy does not bring them. Safe to re-run:
 
   ```
