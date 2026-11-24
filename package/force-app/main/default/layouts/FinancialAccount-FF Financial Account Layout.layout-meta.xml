@@ -200,16 +200,6 @@
         <fields>Type</fields>
         <relatedList>IssuedCards</relatedList>
     </relatedLists>
-    <relatedLists>
-        <excludeButtons>MassChangeOwner</excludeButtons>
-        <fields>NAME</fields>
-        <fields>FF_Market_Value__c</fields>
-        <fields>FF_Market_Value_Date_Time__c</fields>
-        <fields>FF_Provider__c</fields>
-        <fields>FF_Price__c</fields>
-        <fields>Shares__c</fields>
-        <relatedList>Historic_Valuation__c.FF_Financial_Account__c</relatedList>
-    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>

@@ -7,7 +7,7 @@ Validated 2026-11-15 by real deploy to a fresh Developer Edition org after the p
 ## Scope
 
 **Included:**
-- 30 objects (Account, AccountContactRelation, Applicant, ApplicationForm, ApplicationFormProduct, Campaign, Case, Contact, DocumentChecklistItem, Event, FF_Application_Form_Product_Participant__c, FF_Client_Vulnerability__c, FinancialAccount, FinancialAccountBalance, FinancialAccountFee, FinancialAccountParty, FinancialAccountTransaction, FinancialGoal, Historic_Valuation__c, Interaction, InteractionSummary, Lead, Opportunity, PartyFinancialAsset, PartyFinancialLiability, PartyRelationshipGroup, Product2, SecuritiesHolding, Task, User)
+- 29 objects (Account, AccountContactRelation, Applicant, ApplicationForm, ApplicationFormProduct, Campaign, Case, Contact, DocumentChecklistItem, Event, FF_Application_Form_Product_Participant__c, FF_Client_Vulnerability__c, FinancialAccount, FinancialAccountBalance, FinancialAccountFee, FinancialAccountParty, FinancialAccountTransaction, FinancialGoal, Interaction, InteractionSummary, Lead, Opportunity, PartyFinancialAsset, PartyFinancialLiability, PartyRelationshipGroup, Product2, SecuritiesHolding, Task, User)
 - 21 flows, 21 permission sets, 2 permission set groups, the `FF Wealth Standard User` profile
 - 30 FlexiPages, 70 layouts, the `FF_Wealth_Management` Lightning app, 1 tab, 4 quick actions
 - 3 queues, assignment rules, document types, relationship graph definitions, record aggregation definitions, report types/reports, standard value sets (customised ones only), static resources, content assets, 2 workflows

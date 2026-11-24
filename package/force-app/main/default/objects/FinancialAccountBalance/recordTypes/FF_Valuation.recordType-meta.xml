@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Valuation</fullName>
+    <active>true</active>
+    <label>FF Valuation</label>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Valuation</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

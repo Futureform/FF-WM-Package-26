@@ -7,12 +7,12 @@
         <chartSummaries>
             <aggregate>Sum</aggregate>
             <axisBinding>y</axisBinding>
-            <column>Historic_Valuation__c.FF_Market_Value__c</column>
+            <column>FinancialAccount.FinancialAccountBalance$Amount</column>
         </chartSummaries>
         <chartType>Line</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
-        <groupingColumn>Historic_Valuation__c.FF_Market_Value_Date_Time__c</groupingColumn>
+        <groupingColumn>FinancialAccount.FinancialAccountBalance$BalanceAsOfDate</groupingColumn>
         <location>CHART_BOTTOM</location>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
@@ -27,19 +27,28 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>FK_NAME</field>
-    </columns>
-    <columns>
-        <field>CUST_NAME</field>
+        <field>FinancialAccount$Name</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Historic_Valuation__c.FF_Market_Value__c</field>
+        <field>FinancialAccount.FinancialAccountBalance$Amount</field>
     </columns>
-    <description>Used on a Financial Account record chart component to visualise the market value of valuations over time.</description>
+    <columns>
+        <field>FinancialAccount.FinancialAccountBalance$Name</field>
+    </columns>
+    <description>Used on a Financial Account record chart component to visualise the market value of valuations (FF Valuation balances) over time.</description>
+    <filter>
+        <criteriaItems>
+            <column>FinancialAccount.FinancialAccountBalance$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>FinancialAccountBalance.FF_Valuation</value>
+        </criteriaItems>
+    </filter>
     <format>Summary</format>
     <groupingsDown>
-        <field>Historic_Valuation__c.FF_Market_Value_Date_Time__c</field>
+        <field>FinancialAccount.FinancialAccountBalance$BalanceAsOfDate</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Market Valuation Over Time</name>
@@ -47,13 +56,13 @@
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>CustomEntity$Historic_Valuation__c@Historic_Valuation__c.FF_Financial_Account__c</reportType>
+    <reportType>Financial_Accounts_with_Balances__c</reportType>
     <scope>user</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Historic_Valuation__c.FF_Market_Value_Date_Time__c</dateColumn>
+        <dateColumn>FinancialAccount$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

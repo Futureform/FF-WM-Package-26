@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Shares__c</fullName>
+    <fullName>FF_Shares__c</fullName>
+    <description>Number of shares held at the balance as of date, for Valuation record type rows</description>
     <externalId>false</externalId>
     <label>Shares</label>
     <precision>14</precision>
     <required>false</required>
     <scale>4</scale>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
-    <trackTrending>false</trackTrending>
     <type>Number</type>
     <unique>false</unique>
 </CustomField>

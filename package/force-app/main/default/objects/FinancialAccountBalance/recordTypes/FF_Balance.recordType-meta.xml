@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Balance</fullName>
+    <active>true</active>
+    <label>FF Balance</label>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Available Balance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Available Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Balance Last Statement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash Balance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Current Posted Balance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lease Balance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minimum Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Deposit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Withdrawal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Principal Balance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Total Balance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -20,6 +20,10 @@
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>hideSlackAction</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>numVisibleActions</name>
                     <value>3</value>
                 </componentInstanceProperties>
@@ -46,10 +50,40 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SourceSystemIdentifier</fieldItem>
+                <identifier>RecordSourceSystemIdentifierField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.FinancialAccountId</fieldItem>
                 <identifier>RecordFinancialAccountIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.FF_Securities_Holding__c</fieldItem>
+                <identifier>RecordFF_Securities_Holding_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.FF_Provider__c</fieldItem>
+                <identifier>RecordFF_Provider_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-2de9d4ed-00bf-4148-b7bd-5c0e3c267735</name>
@@ -74,6 +108,26 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.BalanceAsOfDate</fieldItem>
                 <identifier>RecordBalanceAsOfDateField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.FF_Price__c</fieldItem>
+                <identifier>RecordFF_Price_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.FF_Shares__c</fieldItem>
+                <identifier>RecordFF_Shares_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-ac4b590f-3999-4016-8c56-b493ffc6c4dd</name>
